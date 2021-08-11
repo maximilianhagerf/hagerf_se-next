@@ -1,0 +1,11 @@
+.ProgressContainer{
+  @apply fixed;
+  top: 50px;
+  right: 50px;
+  width: 50px;
+  height: 50px;
+}
+
+.ProgressBar{
+  stroke: rgba(252, 211, 77, 1);
+}

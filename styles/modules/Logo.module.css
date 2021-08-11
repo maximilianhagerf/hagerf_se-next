@@ -1,0 +1,6 @@
+.Logo {
+  @apply absolute;
+  width: 60px;
+  top: 60px;
+  margin-right: -10px;
+}

@@ -1,0 +1,11 @@
+.Navigation{
+  @apply fixed flex font-bold;
+  padding-left: 180px;
+  top: 65px;
+  right: 100px;
+}
+
+.NavUnderline{
+  @apply bg-yellow-300;
+  height: 2px;
+}

@@ -1,17 +1,37 @@
 import React from "react";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "../styles/modules/SocialLink.module.css";
 
-const SocialLink = ({ socialKey, href, alt, icon }) => {
+const SocialLink = ({ id, href, alt, icon }) => {
+  const variants = {
+    hidden: {
+      x: -100,
+    },
+    visible: {
+      x: 0,
+      transition: {
+        delay: id * 0.2,
+        duration: 0.5,
+      },
+    },
+  };
+  console.log({ id });
   return (
-    <div className={styles.SocialLink}>
-      <Link key={socialKey} href={href} passHref={true} target="_blank">
+    <motion.div
+      className={styles.SocialLink}
+      initial="hidden"
+      animate="visible"
+      variants={variants}
+      custom={id}
+    >
+      <Link href={href} passHref={true} target="_blank">
         <a>
           <Image src={icon} alt={alt} className={styles.Icon} />
         </a>
       </Link>
-    </div>
+    </motion.div>
   );
 };
 

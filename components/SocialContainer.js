@@ -3,27 +3,37 @@ import styles from "../styles/modules/SocialContainer.module.css";
 import github from "../public/images/social/github.svg";
 import dribbble from "../public/images/social/dribbble.svg";
 import linkedin from "../public/images/social/linkedin.svg";
+
+const SocialLinks = [
+  {
+    id: 2,
+    key: "github",
+    href: "https://github.com/maximilianhagerf",
+    alt: "test",
+    icon: github,
+  },
+  {
+    id: 1,
+    key: "dribbble",
+    href: "https://dribbble.com/captain_green",
+    alt: "test",
+    icon: dribbble,
+  },
+  {
+    id: 0,
+    key: "linkedin",
+    href: "https://www.linkedin.com/in/maximilianhagerf/",
+    alt: "test",
+    icon: linkedin,
+  },
+];
+
 const SocialContainer = () => {
   return (
     <div className={styles.SocialContainer}>
-      <SocialLink
-        socialKey="github"
-        href="https://github.com/maximilianhagerf"
-        alt="test"
-        icon={github}
-      />
-      <SocialLink
-        socialKey="dribbble"
-        href="https://dribbble.com/captain_green"
-        alt="test"
-        icon={dribbble}
-      />
-      <SocialLink
-        socialKey="linkedin"
-        href="https://www.linkedin.com/in/maximilianhagerf/"
-        alt="test"
-        icon={linkedin}
-      />
+      {SocialLinks.map(({ id, key, href, alt, icon }) => (
+        <SocialLink id={id} key={key} href={href} alt={alt} icon={icon} />
+      ))}
     </div>
   );
 };

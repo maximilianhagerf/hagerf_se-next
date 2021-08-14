@@ -6,14 +6,16 @@
 }
 
 .NavUnderline {
-  @apply absolute bg-yellow rounded mx-auto;
-  height: 2px;
-  width: 2px;
-  top: -5px;
-  left: calc(50% - 2px);
+  @apply absolute bg-white mx-auto w-full h-full left-0;
+  z-index: -1;
+  margin-top: -2px;
 }
 
 .Link {
-  @apply mr-6 sm:mr-8 flex flex-col relative text-gray-700 text-xs;
-  /* color: rgba(10, 10, 10, .8); */
+  @apply mr-6 sm:mr-8 flex flex-col relative text-gray-700 text-xs hover:text-white px-2 pb-1;
+  @apply transition-colors ease-in-out duration-500;
+}
+
+.IsActive {
+  @apply text-black hover:text-black;
 }

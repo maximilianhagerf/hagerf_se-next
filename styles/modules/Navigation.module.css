@@ -1,11 +1,19 @@
-.Navigation{
+.Navigation {
   @apply fixed flex font-bold;
   padding-left: 180px;
   top: 65px;
-  right: 100px;
+  right: 95px;
 }
 
-.NavUnderline{
-  @apply bg-yellow-300;
+.NavUnderline {
+  @apply absolute bg-yellow rounded mx-auto;
   height: 2px;
+  width: 2px;
+  top: -5px;
+  left: calc(50% - 2px);
+}
+
+.Link {
+  @apply mr-6 sm:mr-8 flex flex-col relative text-gray-700 text-xs;
+  /* color: rgba(10, 10, 10, .8); */
 }

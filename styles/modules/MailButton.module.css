@@ -1,0 +1,45 @@
+.MailButton {
+  @apply flex fixed border-2 border-yellow justify-center bg-ghost-80 cursor-pointer;
+  bottom: 50px;
+  right: 50px;
+
+  &:hover {
+    .TextInside {
+      @apply opacity-100;
+    }
+    .IconContainer {
+      @apply bg-yellow;
+
+      .Svg {
+        path,
+        line {
+          stroke: #000;
+        }
+      }
+    }
+  }
+}
+
+.Text {
+  @apply relative py-3 px-5 text-yellow;
+}
+
+.TextInside {
+  @apply absolute text-white py-3 not-italic w-full h-full left-0 right-0 top-0 text-center opacity-0 bg-ghost-90 font-bold;
+  @apply transition-opacity duration-500 ease-in-out;
+}
+
+.IconContainer {
+  @apply justify-center flex bg-ghost-80 border-l-2 border-yellow;
+  @apply transition-all duration-700 ease-in-out;
+}
+
+.Icon {
+  @apply relative mx-4;
+  width: 36px !important;
+}
+
+.Svg {
+  @apply absolute top-0 left-0 bottom-0 right-0 box-border p-0 border-none m-auto block w-0 h-0 min-w-full max-w-full min-h-full max-h-full;
+  @apply transition-all duration-700 ease-in-out;
+}

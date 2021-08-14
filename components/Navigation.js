@@ -46,7 +46,12 @@ const Navigation = () => {
     <AnimateSharedLayout>
       <nav className={styles.Navigation}>
         {links.map(({ name, href }) => (
-          <NavItem href={href} name={name} pathname={router.pathname} />
+          <NavItem
+            key={name}
+            href={href}
+            name={name}
+            pathname={router.pathname}
+          />
         ))}
       </nav>
     </AnimateSharedLayout>

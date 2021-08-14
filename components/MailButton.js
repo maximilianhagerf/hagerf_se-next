@@ -32,8 +32,8 @@ const MailButton = () => {
                 d="M3.439,2.532,1.6,1.61V19.39H36.4V1.61L19,10.349Z"
                 fill="none"
                 stroke="#f5df4d"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinejoin="round"
+                strokeWidth="2"
               />
               <line
                 id="Line_1"
@@ -42,8 +42,8 @@ const MailButton = () => {
                 transform="translate(1.602 1.61)"
                 fill="none"
                 stroke="#f5df4d"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinejoin="round"
+                strokeWidth="2"
               />
             </g>
           </svg>

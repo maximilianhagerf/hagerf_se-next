@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Welcome from "../components/Welcome";
 
 import Content from "../components/Content";
 import styles from "../styles/modules/Home.module.css";
@@ -27,13 +28,20 @@ export default function Home({ canonical }) {
         // transition={{ type: "linear" }} // Set the transition to linear
         className={styles.Title}
       >
-        <span>Developer</span> & <span>Designer</span> with over a decade of
-        experience.
+        <span className={styles.Yellow}>Developer</span> &{" "}
+        <span className={styles.Yellow}>Designer</span> with over a{" "}
+        <span className={styles.Purple}>decade</span> of experience.
         <br />
         <br />
-        I’m <span>Maximilian Hagerf.</span>
+        I’m <span className={styles.Yellow}>Maximilian Hagerf.</span>
       </motion.h1>
-      <h2>{canonical}</h2>
+
+      <Welcome className={styles.Welcome} />
+
+      <h1 className={styles.Title}>
+        I build <span className={styles.Yellow}>digital products</span>
+      </h1>
+
       <p className={styles.Paragraph}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc venenatis,
         lacus vitae laoreet commodo, mi felis fermentum mi, vitae hendrerit

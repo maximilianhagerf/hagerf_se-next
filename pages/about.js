@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Content from "../components/Content";
+import Welcome from "../components/Welcome";
 // import Image from "next/image";
 import styles from "../styles/modules/About.module.css";
 
@@ -12,7 +13,9 @@ export default function About({ canonical }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1>About</h1>
+      <Welcome />
       <h2>{canonical}</h2>
+
       <p styles={{ color: "#fff" }}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc venenatis,
         lacus vitae laoreet commodo, mi felis fermentum mi, vitae hendrerit

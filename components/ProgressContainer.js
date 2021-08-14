@@ -24,9 +24,23 @@ const ProgressContainer = () => {
     [yRange]
   );
 
+  const onClick = () => {
+    if (currentPrecent === 100) {
+      window.scrollTo(0, 0);
+    }
+  };
+
   return (
-    <motion.div className={styles.ProgressContainer}>
-      <svg className="progress-icon" viewBox="0 0 60 60">
+    <motion.div className={styles.ProgressContainer} onClick={onClick}>
+      <motion.svg
+        className="progress-icon"
+        viewBox="0 0 60 60"
+        animate={{
+          transitionEnd: {
+            style: currentPrecent === 100 ? "cursor:pointer" : "cursor:default",
+          },
+        }}
+      >
         <motion.path
           animate={{
             fill:
@@ -40,13 +54,23 @@ const ProgressContainer = () => {
           className={styles.ProgressBar}
           style={{
             pathLength,
-            rotate: 90,
-            translateX: 5,
-            translateY: 5,
-            scaleX: -1,
           }}
         />
-      </svg>
+        {/* <path
+          mask="url(#myMask)"
+          d="M 0, 20 a 20, 20 0 1,0 40,0 a 20, 20 0 1,0 -40,0"
+        /> */}
+        {/* <mask id="myMask"> */}
+        <motion.path
+          animate={{
+            stroke: currentPrecent === 100 ? "rgba(0,0,0,1)" : "rgba(0,0,0,0)",
+          }}
+          stroke-linecap="round"
+          className={styles.Arrow}
+          d=" M 1,9 L 9,1 L 18,9"
+        />
+        {/* </mask> */}
+      </motion.svg>
     </motion.div>
   );
 };

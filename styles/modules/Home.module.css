@@ -1,5 +1,6 @@
 .Title {
   @apply text-8xl font-bold;
+  padding-right: 180px;
   margin-bottom: 50vh;
 }
 
@@ -11,7 +12,15 @@
 }
 
 .Paragraph {
-  margin-top: 50vh;
+  @apply text-lg;
+  margin-bottom: 50vh;
+  padding-right: 180px;
 
   /* margin-top: 300px; */
+}
+
+.Right {
+  @apply text-right;
+  padding-right: 50px;
+  padding-left: 180px;
 }

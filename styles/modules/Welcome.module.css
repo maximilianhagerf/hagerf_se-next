@@ -1,0 +1,16 @@
+.Svg {
+  @apply mx-auto;
+  max-width: 500px;
+}
+
+.Line {
+  fill: none;
+  stroke: #ffffff;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+}
+
+.Welcome {
+  @apply text-center;
+  margin-bottom: 50vh;
+}

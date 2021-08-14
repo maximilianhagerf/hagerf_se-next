@@ -7,19 +7,19 @@ const SocialContainer = () => {
   return (
     <div className={styles.SocialContainer}>
       <SocialLink
-        key="github"
+        socialKey="github"
         href="https://github.com/maximilianhagerf"
         alt="test"
         icon={github}
       />
       <SocialLink
-        key="dribbble"
+        socialKey="dribbble"
         href="https://dribbble.com/captain_green"
         alt="test"
         icon={dribbble}
       />
       <SocialLink
-        key="linkedin"
+        socialKey="linkedin"
         href="https://www.linkedin.com/in/maximilianhagerf/"
         alt="test"
         icon={linkedin}

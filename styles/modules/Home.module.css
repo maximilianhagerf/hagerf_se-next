@@ -1,10 +1,17 @@
-.Title{
+.Title {
   @apply text-8xl font-bold;
-  span{
-    @apply text-yellow-300;
-  }
+  margin-bottom: 50vh;
 }
 
-.Paragraph{
-  margin-top: 300px;
+.Yellow {
+  @apply text-yellow;
+}
+.Purple {
+  @apply text-purple;
+}
+
+.Paragraph {
+  margin-top: 50vh;
+
+  /* margin-top: 300px; */
 }

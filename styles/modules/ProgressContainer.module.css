@@ -8,7 +8,8 @@
 }
 
 .ProgressBar {
-  stroke: rgba(252, 211, 77, 1);
+  stroke: #fff;
+  /* stroke: rgba(252, 211, 77, 1); */
   stroke-linecap: round;
 
   transform: translateX(5px) translateY(5px) scaleX(-1) rotate(90deg);
@@ -16,8 +17,8 @@
 }
 
 .Arrow {
+  @apply stroke-2;
   fill: none;
-  stroke-width: 2;
   stroke-linecap: round;
   transform: translateX(15px) translateY(18px);
 }

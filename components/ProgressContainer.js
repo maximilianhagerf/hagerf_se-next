@@ -45,8 +45,9 @@ const ProgressContainer = () => {
           animate={{
             fill:
               currentPrecent === 100
-                ? "rgba(252, 211, 77, 1)"
-                : "rgba(10, 10, 10, .8)",
+                ? "rgba(255, 255, 255, 1)"
+                : // ? "rgba(252, 211, 77, 1)"
+                  "rgba(10, 10, 10, .8)",
           }}
           strokeWidth="2"
           strokeDasharray="0 1"

@@ -1,5 +1,13 @@
 .Main {
   @apply text-white;
   padding-left: 180px;
+  padding-right: 180px;
   padding-top: 150px;
+
+  /* background-color: #000;
+  background-image: url("https://shotkit.com/wp-content/uploads/2021/02/black_and-white_portraits_christopher_campbell.jpg");
+  background-position: 300px;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat; */
 }

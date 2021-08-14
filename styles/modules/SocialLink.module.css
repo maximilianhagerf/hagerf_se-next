@@ -1,10 +1,7 @@
-.SocialLink{
+.SocialLink {
   margin-top: 20px;
-  &:hover{
-    cursor: pointer;
-  }
   width: 15px;
 }
 
-.Icon{
+.Icon {
 }

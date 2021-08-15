@@ -47,8 +47,9 @@ const ProgressContainer = () => {
               currentPrecent === 100
                 ? "rgba(255, 255, 255, 1)"
                 : // ? "rgba(252, 211, 77, 1)"
-                  "rgba(10, 10, 10, .8)",
+                  "#404040",
           }}
+          transition={{ duration: 0.5 }}
           strokeWidth="2"
           strokeDasharray="0 1"
           d="M 0, 20 a 20, 20 0 1,0 40,0 a 20, 20 0 1,0 -40,0"

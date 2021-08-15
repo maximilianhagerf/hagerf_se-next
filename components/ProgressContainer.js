@@ -7,6 +7,19 @@ import {
 } from "framer-motion";
 import styles from "../styles/modules/ProgressContainer.module.css";
 
+const containerVariants = {
+  hidden: {
+    y: -100,
+  },
+  visible: {
+    y: 0,
+    transition: {
+      delay: 0.5,
+      duration: 0.5,
+    },
+  },
+};
+
 const ProgressContainer = () => {
   const [currentPrecent, setCurrentPercent] = useState(null);
   const { scrollYProgress } = useViewportScroll();
@@ -31,7 +44,13 @@ const ProgressContainer = () => {
   };
 
   return (
-    <motion.div className={styles.ProgressContainer} onClick={onClick}>
+    <motion.div
+      className={styles.ProgressContainer}
+      onClick={onClick}
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+    >
       <motion.svg
         className="progress-icon"
         viewBox="0 0 60 60"
@@ -43,11 +62,10 @@ const ProgressContainer = () => {
       >
         <motion.path
           animate={{
-            fill:
-              currentPrecent === 100
-                ? "rgba(255, 255, 255, 1)"
-                : // ? "rgba(252, 211, 77, 1)"
-                  "#404040",
+            fill: currentPrecent === 100 ? "rgba(255, 255, 255, 1)" : "#404040",
+            transitionEnd: {
+              strokeLinecap: currentPrecent < 3 ? "" : "round",
+            },
           }}
           transition={{ duration: 0.5 }}
           strokeWidth="2"

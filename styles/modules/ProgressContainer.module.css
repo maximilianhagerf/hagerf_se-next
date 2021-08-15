@@ -1,18 +1,13 @@
 .ProgressContainer {
   @apply fixed;
   top: 60px;
-  /* top: 50px; */
   right: 50px;
   width: 50px;
   height: 50px;
-  /* cursor: pointer; */
 }
 
 .ProgressBar {
   stroke: #fff;
-  /* stroke: rgba(252, 211, 77, 1); */
-  stroke-linecap: round;
-
   transform: translateX(5px) translateY(5px) scaleX(-1) rotate(90deg);
   transform-origin: 20px 20px;
 }

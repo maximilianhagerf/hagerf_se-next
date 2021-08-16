@@ -4,8 +4,8 @@
   right: 50px;
 
   &:hover {
-    .TextInside {
-      @apply opacity-100;
+    .Text {
+      width: 260px;
     }
     .IconContainer {
       @apply bg-yellow;
@@ -21,7 +21,13 @@
 }
 
 .Text {
-  @apply relative py-3 px-5 text-yellow;
+  @apply relative py-3 text-yellow w-0 px-0 overflow-hidden text-center;
+  @apply transition-all duration-700 ease-in-out;
+  &:hover {
+    .TextInside {
+      @apply opacity-100;
+    }
+  }
 }
 
 .TextInside {
@@ -30,7 +36,7 @@
 }
 
 .IconContainer {
-  @apply justify-center flex bg-ghost-80 border-l-2 border-yellow;
+  @apply justify-center flex bg-ghost-80;
   @apply transition-all duration-700 ease-in-out;
 }
 
@@ -42,4 +48,8 @@
 .Svg {
   @apply absolute top-0 left-0 bottom-0 right-0 box-border p-0 border-none m-auto block w-0 h-0 min-w-full max-w-full min-h-full max-h-full;
   @apply transition-all duration-700 ease-in-out;
+}
+
+.Confirm {
+  @apply absolute -top-8 text-yellow w-40 opacity-0 w-full;
 }

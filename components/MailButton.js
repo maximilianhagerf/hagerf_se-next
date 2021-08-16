@@ -1,13 +1,82 @@
+import { useState, useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
 import styles from "../styles/modules/MailButton.module.css";
 
+const confirmVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+  },
+};
+
+const containerVariants = {
+  hidden: {
+    y: 120,
+    transition: {
+      delay: 0.5,
+      duration: 0.5,
+    },
+  },
+  visible: {
+    y: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
+
+async function copyTextToClipboard(text) {
+  if ("clipboard" in navigator) {
+    return await navigator.clipboard.writeText(text);
+  } else {
+    return document.execCommand("copy", true, text);
+  }
+}
+
 const MailButton = () => {
+  const controls = useAnimation();
+  const [isCopied, setIsCopied] = useState(false);
+
+  useEffect(() => {
+    if (isCopied) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [controls, isCopied]);
+
+  const onClick = () => {
+    copyTextToClipboard("maximilian.hagerf@gmail.com")
+      .then(() => {
+        setIsCopied(true);
+        setTimeout(() => {
+          setIsCopied(false);
+        }, 1500);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
-    <div
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      exit="hidden"
+      variants={containerVariants}
       className={styles.MailButton}
-      onClick={() => {
-        navigator.clipboard.writeText("maximilian.hagerf@gmail.com");
-      }}
+      onClick={onClick}
     >
+      <motion.span
+        initial="hidden"
+        animate={controls}
+        variants={confirmVariants}
+        className={styles.Confirm}
+      >
+        Copied!
+      </motion.span>
       <span className={styles.Text}>
         maximilian.hagerf@gmail.com
         <i className={styles.TextInside}>CLICK TO COPY</i>
@@ -49,7 +118,7 @@ const MailButton = () => {
           </svg>
         </i>
       </span>
-    </div>
+    </motion.div>
   );
 };
 

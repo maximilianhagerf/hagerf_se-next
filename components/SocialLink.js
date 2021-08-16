@@ -7,10 +7,14 @@ import styles from "../styles/modules/SocialLink.module.css";
 const SocialLink = ({ id, href, alt, icon }) => {
   const variants = {
     hidden: {
-      x: -100,
+      y: 200,
+      transition: {
+        delay: id * 0.2,
+        duration: 0.5,
+      },
     },
     visible: {
-      x: 0,
+      y: 0,
       transition: {
         delay: id * 0.2,
         duration: 0.5,
@@ -23,6 +27,7 @@ const SocialLink = ({ id, href, alt, icon }) => {
       className={styles.SocialLink}
       initial="hidden"
       animate="visible"
+      exit="hidden"
       variants={variants}
       custom={id}
     >

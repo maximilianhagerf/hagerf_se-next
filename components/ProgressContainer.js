@@ -10,11 +10,15 @@ import styles from "../styles/modules/ProgressContainer.module.css";
 const containerVariants = {
   hidden: {
     y: -100,
+    transition: {
+      delay: 0.5,
+      duration: 0.5,
+    },
   },
   visible: {
     y: 0,
     transition: {
-      delay: 0.5,
+      delay: 0.2,
       duration: 0.5,
     },
   },
@@ -49,6 +53,7 @@ const ProgressContainer = () => {
       onClick={onClick}
       initial="hidden"
       animate="visible"
+      exit="hidden"
       variants={containerVariants}
     >
       <motion.svg

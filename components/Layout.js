@@ -1,17 +1,12 @@
 import { AnimatePresence } from "framer-motion";
-import Sidebar from "./Sidebar";
-import Navigation from "./Navigation";
-import ProgressContainer from "../components/ProgressContainer";
-import MailButton from "../components/MailButton";
+import Navigation from "../components/Navigation";
+
 import styles from "../styles/modules/Layout.module.css";
 
 const Layout = ({ children }) => {
   return (
     <div className={styles.Layout}>
-      <Sidebar />
       <Navigation />
-      <ProgressContainer />
-      <MailButton />
 
       <AnimatePresence
         exitBeforeEnter

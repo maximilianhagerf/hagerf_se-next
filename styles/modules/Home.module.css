@@ -1,26 +1,15 @@
-.Title {
-  @apply text-8xl font-bold;
-  padding-right: 180px;
-  margin-bottom: 50vh;
+.TextAnimate {
+  @apply text-9xl relative h-40 overflow-hidden w-full;
 }
-
-.Yellow {
-  @apply text-yellow;
+.TextAnimateWrap {
+  @apply absolute;
 }
-.Purple {
-  @apply text-purple;
+.Container {
+  @apply fixed w-full h-full top-0 left-0 flex justify-center items-center flex-col pl-48;
 }
-
-.Paragraph {
-  @apply text-lg;
-  margin-bottom: 50vh;
-  padding-right: 180px;
-
-  /* margin-top: 300px; */
-}
-
-.Right {
-  @apply text-right;
-  padding-right: 50px;
-  padding-left: 180px;
+.BackgroundImage {
+  height: 100%;
+  position: fixed;
+  right: 0;
+  z-index: -1;
 }

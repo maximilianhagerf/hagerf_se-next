@@ -10,3 +10,34 @@
   background-attachment: fixed;
   background-repeat: no-repeat; */
 }
+
+.Title {
+  @apply text-8xl font-bold;
+  padding-right: 180px;
+  margin-bottom: 50vh;
+}
+
+.TitleNoMargin {
+  @apply mb-0;
+}
+
+.Yellow {
+  @apply text-yellow;
+}
+.Purple {
+  @apply text-purple;
+}
+
+.Paragraph {
+  @apply text-lg text-gray-400;
+  margin-bottom: 50vh;
+  padding-right: 180px;
+
+  /* margin-top: 300px; */
+}
+
+.Right {
+  @apply text-right;
+  padding-right: 50px;
+  padding-left: 180px;
+}

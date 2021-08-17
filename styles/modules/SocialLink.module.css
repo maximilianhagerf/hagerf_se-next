@@ -1,6 +1,9 @@
 .SocialLink {
-  margin-top: 20px;
-  width: 15px;
+  @apply w-4 mt-5 opacity-80;
+  @apply transition-opacity duration-500 ease-in-out;
+  &:hover {
+    @apply opacity-100;
+  }
 }
 
 .Icon {

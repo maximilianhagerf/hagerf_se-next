@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import styles from "../styles/modules/Content.module.css";
 
 const Content = ({ children }) => {

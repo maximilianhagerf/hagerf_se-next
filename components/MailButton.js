@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useRouter } from "next/dist/client/router";
 import { motion, useAnimation } from "framer-motion";
 import styles from "../styles/modules/MailButton.module.css";
 
@@ -13,15 +14,16 @@ const confirmVariants = {
 
 const containerVariants = {
   hidden: {
-    y: 120,
+    x: 130,
     transition: {
-      delay: 0.5,
+      delay: 0.8,
       duration: 0.5,
     },
   },
   visible: {
-    y: 0,
+    x: 0,
     transition: {
+      delay: 1.8,
       duration: 0.5,
     },
   },
@@ -38,6 +40,17 @@ async function copyTextToClipboard(text) {
 const MailButton = () => {
   const controls = useAnimation();
   const [isCopied, setIsCopied] = useState(false);
+
+  const mainControls = useAnimation();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (router.pathname === "/") {
+      mainControls.start("hidden");
+    } else {
+      mainControls.start("visible");
+    }
+  }, [mainControls, router]);
 
   useEffect(() => {
     if (isCopied) {
@@ -63,7 +76,7 @@ const MailButton = () => {
   return (
     <motion.div
       initial="hidden"
-      animate="visible"
+      animate={mainControls}
       exit="hidden"
       variants={containerVariants}
       className={styles.MailButton}

@@ -1,20 +1,32 @@
-import React from "react";
-import { motion } from "framer-motion";
+import { useEffect } from "react";
+import { useRouter } from "next/dist/client/router";
+import { motion, useAnimation } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "../styles/modules/SocialLink.module.css";
 
 const SocialLink = ({ id, href, alt, icon }) => {
+  const controls = useAnimation();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (router.pathname === "/") {
+      controls.start("hidden");
+    } else {
+      controls.start("visible");
+    }
+  }, [controls, router]);
+
   const variants = {
     hidden: {
-      y: 200,
+      x: -120,
       transition: {
-        delay: id * 0.2,
+        delay: id * 0.1,
         duration: 0.5,
       },
     },
     visible: {
-      y: 0,
+      x: 0,
       transition: {
         delay: id * 0.2,
         duration: 0.5,
@@ -26,7 +38,7 @@ const SocialLink = ({ id, href, alt, icon }) => {
     <motion.div
       className={styles.SocialLink}
       initial="hidden"
-      animate="visible"
+      animate={controls}
       exit="hidden"
       variants={variants}
       custom={id}

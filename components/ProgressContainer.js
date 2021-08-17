@@ -9,14 +9,14 @@ import styles from "../styles/modules/ProgressContainer.module.css";
 
 const containerVariants = {
   hidden: {
-    y: -100,
+    x: 100,
     transition: {
       delay: 0.5,
       duration: 0.5,
     },
   },
   visible: {
-    y: 0,
+    x: 0,
     transition: {
       delay: 0.2,
       duration: 0.5,
@@ -43,7 +43,9 @@ const ProgressContainer = () => {
 
   const onClick = () => {
     if (currentPrecent === 100) {
-      window.scrollTo(0, 0);
+      // window.scrollTo(0, 0);
+      setCurrentPercent(0);
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     }
   };
 
@@ -81,20 +83,18 @@ const ProgressContainer = () => {
             pathLength,
           }}
         />
-        {/* <path
-          mask="url(#myMask)"
-          d="M 0, 20 a 20, 20 0 1,0 40,0 a 20, 20 0 1,0 -40,0"
-        /> */}
-        {/* <mask id="myMask"> */}
+
         <motion.path
+          mask="url(#mask1)"
           animate={{
             stroke: currentPrecent === 100 ? "rgba(0,0,0,1)" : "rgba(0,0,0,0)",
+            x: "15px",
+            y: currentPrecent === 100 ? "18px" : "50px",
           }}
           stroke-linecap="round"
           className={styles.Arrow}
           d=" M 1,9 L 9,1 L 18,9"
         />
-        {/* </mask> */}
       </motion.svg>
     </motion.div>
   );

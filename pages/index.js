@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,13 +13,18 @@ import stylesHome from "../styles/modules/Home.module.css";
 const backgroundVariants = {
   hidden: {
     opacity: 0,
-    scale: 0.9,
+    scale: 0.98,
+    transition: {
+      // delay: 2,
+      duration: 1,
+    },
   },
   visible: {
     opacity: 1,
     scale: 1,
     transition: {
-      duration: 0.5,
+      delay: 2,
+      duration: 2,
     },
   },
 };
@@ -63,6 +69,10 @@ const container = {
 };
 
 export default function Home({ canonical }) {
+  const [isShown, setIsShown] = useState(false);
+
+  function onClick() {}
+
   return (
     <>
       <Content>
@@ -103,18 +113,20 @@ export default function Home({ canonical }) {
             </motion.span>
           </h1>
           <h1
-            className={`${styles.Title} ${styles.TitleNoMargin} ${stylesHome.TextAnimate}`}
+            onMouseEnter={() => setIsShown(true)}
+            onMouseLeave={() => setIsShown(false)}
+            onClick={onClick}
+            className={`${styles.Title} ${styles.TitleNoMargin} ${stylesHome.TextAnimate} ${stylesHome.TextHover}`}
           >
             <motion.span
               variants={item}
               className={`${styles.Yellow} ${stylesHome.TextAnimateWrap}`}
             >
-              Maximilian
+              <Link href="/about" scroll={false}>
+                <a>{!isShown ? "Max" : "About"}</a>
+              </Link>
             </motion.span>
           </h1>
-          <Link href="/about" scroll={false}>
-            <a>Enter</a>
-          </Link>
         </motion.div>
       </Content>
     </>

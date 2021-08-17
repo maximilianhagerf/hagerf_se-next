@@ -1,15 +1,29 @@
 .TextAnimate {
-  @apply text-9xl relative h-40 overflow-hidden w-full;
+  @apply relative overflow-hidden w-full;
+  @apply text-6xl h-16;
+  @apply sm:text-8xl sm:h-32;
+  @apply lg:text-9xl lg:h-40;
 }
 .TextAnimateWrap {
   @apply absolute;
 }
+
+.TextHover {
+  @apply transition-all duration-500 ease-in-out;
+  &:hover {
+    @apply pl-20;
+  }
+}
 .Container {
-  @apply fixed w-full h-full top-0 left-0 flex justify-center items-center flex-col pl-48;
+  @apply fixed w-full h-full top-0 left-0 flex justify-center items-center flex-col;
+  @apply pl-10;
+  @apply sm:pl-20;
+  @apply lg:pl-48;
 }
 .BackgroundImage {
-  height: 100%;
+  width: 50%;
   position: fixed;
   right: 0;
+  bottom: 0;
   z-index: -1;
 }

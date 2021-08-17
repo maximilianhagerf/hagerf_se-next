@@ -38,6 +38,6 @@
 
 .Right {
   @apply text-right;
-  padding-right: 50px;
+  padding-right: 180px;
   padding-left: 180px;
 }

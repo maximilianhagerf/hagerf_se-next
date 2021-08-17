@@ -1,30 +1,34 @@
 import { useEffect, useState } from "react";
+import { useRouter } from "next/dist/client/router";
 import {
   motion,
   useViewportScroll,
   useSpring,
   useTransform,
+  useAnimation,
 } from "framer-motion";
 import styles from "../styles/modules/ProgressContainer.module.css";
 
 const containerVariants = {
   hidden: {
-    x: 100,
+    x: 120,
     transition: {
-      delay: 0.5,
+      delay: 1.2,
       duration: 0.5,
     },
   },
   visible: {
     x: 0,
     transition: {
-      delay: 0.2,
+      delay: 2.4,
       duration: 0.5,
     },
   },
 };
 
 const ProgressContainer = () => {
+  const controls = useAnimation();
+  const router = useRouter();
   const [currentPrecent, setCurrentPercent] = useState(null);
   const { scrollYProgress } = useViewportScroll();
   const yRange = useTransform(scrollYProgress, [0, 1], [0, 100]);
@@ -32,6 +36,14 @@ const ProgressContainer = () => {
     stiffness: 600,
     damping: 100,
   });
+
+  useEffect(() => {
+    if (router.pathname === "/") {
+      controls.start("hidden");
+    } else {
+      controls.start("visible");
+    }
+  }, [controls, router]);
 
   useEffect(
     () =>
@@ -43,7 +55,6 @@ const ProgressContainer = () => {
 
   const onClick = () => {
     if (currentPrecent === 100) {
-      // window.scrollTo(0, 0);
       setCurrentPercent(0);
       window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     }
@@ -54,7 +65,8 @@ const ProgressContainer = () => {
       className={styles.ProgressContainer}
       onClick={onClick}
       initial="hidden"
-      animate="visible"
+      animate={controls}
+      // animate="visible"
       exit="hidden"
       variants={containerVariants}
     >

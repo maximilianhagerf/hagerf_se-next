@@ -1,20 +1,21 @@
 .Navigation {
-  @apply fixed flex font-bold;
-  padding-left: 180px;
-  top: 75px;
-  /* top: 65px; */
-  right: 95px;
+  @apply fixed flex font-bold flex-col;
+  right: 78px;
+  top: 130px;
 }
 
 .NavUnderline {
   @apply absolute bg-white mx-auto w-full h-full left-0;
+  margin-top: -1px;
   z-index: -1;
 }
 
 .Link {
-  @apply mr-6 sm:mr-8 flex flex-col relative text-gray-700 text-xs hover:text-white px-1 tracking-widest;
+  @apply mb-6 sm:mb-8 flex flex-col relative text-gray-700 text-xs hover:text-white tracking-widest;
   @apply transition-colors ease-in-out duration-500;
   letter-spacing: 3px;
+  text-orientation: upright;
+  writing-mode: vertical-rl;
 }
 
 .IsActive {

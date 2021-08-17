@@ -8,12 +8,12 @@ import styles from "../styles/modules/Navigation.module.css";
 
 const links = [
   {
-    id: 1,
+    id: 2,
     name: "HOME",
     href: "/",
   },
   {
-    id: 2,
+    id: 1,
     name: "ABOUT",
     href: "/about",
   },
@@ -21,14 +21,14 @@ const links = [
 
 const variants = {
   hidden: (custom) => ({
-    y: -100,
+    x: 100,
     transition: {
       delay: custom * 0.2,
       duration: 0.5,
     },
   }),
   visible: (custom) => ({
-    y: 0,
+    x: 0,
     transition: {
       delay: custom * 0.5,
       duration: 0.5,
@@ -56,8 +56,6 @@ const variantsIndicator = {
 function NavItem(props) {
   const controls = useAnimation();
   const router = useRouter();
-
-  console.log(router.pathname === "/");
 
   useEffect(() => {
     if (router.pathname === "/") {

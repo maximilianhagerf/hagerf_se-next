@@ -6,21 +6,21 @@ import linkedin from "../public/images/social/linkedin.svg";
 
 const SocialLinks = [
   {
-    id: 2,
+    id: 12,
     key: "github",
     href: "https://github.com/maximilianhagerf",
     alt: "test",
     icon: github,
   },
   {
-    id: 1,
+    id: 11,
     key: "dribbble",
     href: "https://dribbble.com/captain_green",
     alt: "test",
     icon: dribbble,
   },
   {
-    id: 0,
+    id: 10,
     key: "linkedin",
     href: "https://www.linkedin.com/in/maximilianhagerf/",
     alt: "test",

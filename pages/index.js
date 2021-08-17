@@ -1,10 +1,8 @@
-import { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-// import AnimatedCharacters from "../components/AnimatedCharacters";
 import background from "../public/images/backtest.png";
 import Content from "../components/Content";
 import styles from "../styles/modules/Content.module.css";
@@ -40,6 +38,7 @@ const item = {
     y: 0,
     transition: {
       // type: "linear",
+      delay: 2,
       ease: "easeOut",
       duration: 0.5,
     },
@@ -69,10 +68,6 @@ const container = {
 };
 
 export default function Home({ canonical }) {
-  const [isShown, setIsShown] = useState(false);
-
-  function onClick() {}
-
   return (
     <>
       <Content>
@@ -98,32 +93,41 @@ export default function Home({ canonical }) {
           >
             <Image src={background} alt="fds" />
           </motion.div>
+
           <h1
             className={`${styles.Title} ${styles.TitleNoMargin} ${stylesHome.TextAnimate}`}
           >
             <motion.span variants={item} className={stylesHome.TextAnimateWrap}>
-              Hi
+              I'm
             </motion.span>
           </h1>
           <h1
             className={`${styles.Title} ${styles.TitleNoMargin} ${stylesHome.TextAnimate}`}
-          >
-            <motion.span variants={item} className={stylesHome.TextAnimateWrap}>
-              I am
-            </motion.span>
-          </h1>
-          <h1
-            onMouseEnter={() => setIsShown(true)}
-            onMouseLeave={() => setIsShown(false)}
-            onClick={onClick}
-            className={`${styles.Title} ${styles.TitleNoMargin} ${stylesHome.TextAnimate} ${stylesHome.TextHover}`}
           >
             <motion.span
               variants={item}
-              className={`${styles.Yellow} ${stylesHome.TextAnimateWrap}`}
+              className={`${styles.Yellow} ${stylesHome.TextAnimateWrap}  ${stylesHome.TextHover}`}
             >
               <Link href="/about" scroll={false}>
-                <a>{!isShown ? "Max" : "About"}</a>
+                <a>
+                  <span className={stylesHome.TextHoverShown}>Maximilian</span>
+                  <span className={stylesHome.TextHoverHidden}>About</span>
+                </a>
+              </Link>
+            </motion.span>
+          </h1>
+          <h1
+            className={`${styles.Title} ${styles.TitleNoMargin} ${stylesHome.TextAnimate}`}
+          >
+            <motion.span
+              variants={item}
+              className={`${styles.Yellow} ${stylesHome.TextAnimateWrap}  ${stylesHome.TextHover}`}
+            >
+              <Link href="/work" scroll={false}>
+                <a>
+                  <span className={stylesHome.TextHoverShown}>Hagerf</span>
+                  <span className={stylesHome.TextHoverHidden}>Work</span>
+                </a>
               </Link>
             </motion.span>
           </h1>

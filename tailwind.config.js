@@ -36,7 +36,7 @@ module.exports = {
         "9xl": ["8rem", { lineHeight: "1" }],
       },
       colors: {
-        black: "#121212",
+        black: "#000",
         ghost: {
           10: "rgba(10, 10, 10, 0.1)",
           20: "rgba(10, 10, 10, 0.2)",

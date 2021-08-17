@@ -1,5 +1,0 @@
-.Sidebar{
-  @apply flex min-h-full justify-center fixed items-end;
-  width: 180px;
-  padding-bottom: 50px;
-}

@@ -1,6 +1,15 @@
 .Logo {
-  @apply absolute;
+  @apply fixed;
   width: 60px;
   top: 60px;
+  left: 70px;
   margin-right: -10px;
+}
+
+.Line {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
 }

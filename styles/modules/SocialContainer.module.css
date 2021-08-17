@@ -1,3 +1,4 @@
-.SocialContainer{
-
+.SocialContainer {
+  @apply flex flex-col justify-center fixed items-center bottom-12;
+  width: 180px;
 }

@@ -21,7 +21,7 @@ const SocialLink = ({ id, href, alt, icon }) => {
       },
     },
   };
-  console.log({ id });
+
   return (
     <motion.div
       className={styles.SocialLink}

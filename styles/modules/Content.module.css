@@ -1,18 +1,10 @@
 .Main {
   @apply text-white;
-  padding-left: 180px;
-  padding-top: 150px;
-
-  /* background-color: #000;
-  background-image: url("https://shotkit.com/wp-content/uploads/2021/02/black_and-white_portraits_christopher_campbell.jpg");
-  background-position: 300px;
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat; */
 }
 
 .Title {
   @apply text-8xl font-bold;
+  padding-left: 180px;
   padding-right: 180px;
   margin-bottom: 50vh;
 }
@@ -32,8 +24,7 @@
   @apply text-lg text-gray-400;
   margin-bottom: 50vh;
   padding-right: 180px;
-
-  /* margin-top: 300px; */
+  padding-left: 180px;
 }
 
 .Right {
@@ -41,3 +32,69 @@
   padding-right: 180px;
   padding-left: 180px;
 }
+
+.Header {
+  padding-top: 150px;
+}
+
+/**
+ *
+ * HOME PAGE
+ *
+ */
+
+.HomeTextAnimate {
+  @apply relative overflow-hidden w-full;
+  @apply text-6xl h-16;
+  @apply sm:text-8xl sm:h-32;
+  @apply lg:text-9xl lg:h-36;
+}
+.HomeTextAnimateWrap {
+  @apply absolute;
+}
+
+.HomeTextHover {
+  .HomeTextHoverHidden {
+    @apply absolute opacity-0 left-0;
+  }
+  span {
+    @apply relative transition-all duration-500 ease-in-out;
+  }
+  &:hover {
+    span {
+      @apply ml-20;
+    }
+    .HomeTextHoverHidden {
+      @apply opacity-100;
+    }
+    .HomeTextHoverShown {
+      @apply opacity-0;
+    }
+  }
+}
+
+.HomeContainer {
+  @apply w-full h-screen top-0 left-0 flex justify-center items-center flex-col !important;
+  /* @apply pl-10;
+  @apply sm:pl-20;
+  @apply lg:pl-48; */
+}
+.HomeBackgroundImage {
+  width: 50%;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  /* z-index: -1; */
+}
+
+/**
+ *
+ * ABOUT PAGE
+ *
+ */
+
+/**
+ *
+ * WORK PAGE
+ *
+ */

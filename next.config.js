@@ -4,8 +4,4 @@ module.exports = {
     loader: "imgix",
     path: "",
   },
-  i18n: {
-    locales: ["en"],
-    defaultLocale: "en",
-  },
 };

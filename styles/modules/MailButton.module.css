@@ -1,11 +1,22 @@
+.MailButtonContainer {
+  @apply fixed z-10;
+  @apply bottom-0 right-0 w-full m-0;
+  @apply sm:bottom-9 sm:right-9 sm:w-auto sm:left-auto;
+  @apply lg:bottom-12 lg:right-12 lg:-ml-px;
+}
+
 .MailButton {
-  @apply flex fixed border-2 border-yellow justify-center bg-ghost-90 cursor-pointer;
+  @apply flex border-2 border-yellow justify-center bg-ghost-90 cursor-pointer;
   bottom: 50px;
   right: 50px;
 
+  @apply w-full m-6;
+  @apply sm:m-0;
+
   &:hover {
     .Text {
-      width: 260px;
+      @apply sm:w-60;
+      @apply lg:w-65;
     }
     .IconContainer {
       @apply bg-yellow;
@@ -20,9 +31,16 @@
   }
 }
 
+.MailButtonHidden {
+  display: none;
+}
+
 .Text {
-  @apply relative py-3 text-yellow w-0 px-0 overflow-hidden text-center;
+  @apply relative text-yellow px-0 overflow-hidden text-center;
   @apply transition-all duration-700 ease-in-out;
+  @apply py-2;
+  @apply sm:py-2 sm:w-0;
+  @apply lg:py-3;
   &:hover {
     .TextInside {
       @apply opacity-100;
@@ -31,26 +49,37 @@
 }
 
 .TextInside {
-  @apply absolute text-white py-3 not-italic w-full h-full left-0 right-0 top-0 text-center opacity-0 bg-ghost-90;
+  @apply absolute text-white not-italic w-full h-full left-0 right-0 top-0 text-center opacity-0 bg-ghost-90;
   @apply transition-opacity duration-500 ease-in-out;
+  @apply hidden;
+  @apply sm:py-2 sm:block;
+  @apply lg:py-3;
   letter-spacing: 2px;
 }
 
 .IconContainer {
   @apply justify-center flex bg-ghost-90;
   @apply transition-all duration-700 ease-in-out;
+  @apply hidden;
+  @apply sm:flex;
 }
 
 .Icon {
-  @apply relative mx-4;
-  width: 36px !important;
+  @apply relative;
+  @apply mx-1 w-6;
+  @apply sm:mx-2 sm:w-8;
+  @apply lg:mx-4 lg:w-9;
 }
 
 .Svg {
   @apply absolute top-0 left-0 bottom-0 right-0 box-border p-0 border-none m-auto block w-0 h-0 min-w-full max-w-full min-h-full max-h-full;
-  @apply transition-all duration-700 ease-in-out;
+  path,
+  line {
+    @apply transition-all duration-700 ease-in-out;
+  }
 }
 
 .Confirm {
-  @apply absolute -top-8 text-yellow opacity-0 w-full;
+  @apply absolute -top-4 text-yellow opacity-0 w-full text-center;
+  @apply sm:text-left sm:-top-8;
 }

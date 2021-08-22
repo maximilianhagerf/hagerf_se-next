@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/dist/client/router";
 import { motion, useAnimation } from "framer-motion";
+
 import Link from "next/link";
 import Image from "next/image";
 import styles from "../styles/modules/SocialLink.module.css";
@@ -19,7 +20,7 @@ const SocialLink = ({ id, href, alt, icon }) => {
 
   const variants = {
     hidden: {
-      x: -120,
+      x: -170,
       transition: {
         delay: id * 0.1,
         duration: 0.5,

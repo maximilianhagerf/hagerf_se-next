@@ -3,7 +3,6 @@ import Navigation from "../components/Navigation";
 import Logo from "../components/Logo";
 import SocialContainer from "../components/SocialContainer";
 import MailButton from "../components/MailButton";
-
 import styles from "../styles/modules/Layout.module.css";
 
 const Layout = ({ children }) => {
@@ -11,7 +10,6 @@ const Layout = ({ children }) => {
     <div className={styles.Layout}>
       <Navigation />
       <Logo />
-      <SocialContainer />
       <MailButton />
       <AnimatePresence
         exitBeforeEnter
@@ -20,6 +18,7 @@ const Layout = ({ children }) => {
       >
         {children}
       </AnimatePresence>
+      <SocialContainer />
     </div>
   );
 };

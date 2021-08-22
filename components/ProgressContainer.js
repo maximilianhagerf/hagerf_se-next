@@ -38,6 +38,7 @@ const ProgressContainer = () => {
   });
 
   useEffect(() => {
+    console.log(router.pathname);
     if (router.pathname === "/") {
       controls.start("hidden");
     } else {
@@ -54,7 +55,7 @@ const ProgressContainer = () => {
   );
 
   const onClick = () => {
-    if (currentPrecent === 100) {
+    if (currentPrecent >= 99) {
       setCurrentPercent(0);
       window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     }
@@ -75,13 +76,13 @@ const ProgressContainer = () => {
         viewBox="0 0 60 60"
         animate={{
           transitionEnd: {
-            style: currentPrecent === 100 ? "cursor:pointer" : "cursor:default",
+            style: currentPrecent >= 99 ? "cursor:pointer" : "cursor:default",
           },
         }}
       >
         <motion.path
           animate={{
-            fill: currentPrecent === 100 ? "rgba(255, 255, 255, 1)" : "#404040",
+            fill: currentPrecent >= 99 ? "rgba(255, 255, 255, 1)" : "#404040",
             transitionEnd: {
               strokeLinecap: currentPrecent < 3 ? "" : "round",
             },
@@ -99,9 +100,9 @@ const ProgressContainer = () => {
         <motion.path
           mask="url(#mask1)"
           animate={{
-            stroke: currentPrecent === 100 ? "rgba(0,0,0,1)" : "rgba(0,0,0,0)",
+            stroke: currentPrecent >= 99 ? "rgba(0,0,0,1)" : "rgba(0,0,0,0)",
             x: "15px",
-            y: currentPrecent === 100 ? "18px" : "50px",
+            y: currentPrecent >= 99 ? "18px" : "50px",
           }}
           stroke-linecap="round"
           className={styles.Arrow}

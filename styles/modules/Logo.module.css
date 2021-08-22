@@ -1,19 +1,24 @@
 .Logo {
-  @apply fixed;
-  width: 60px;
-  top: 60px;
-  left: 70px;
-  margin-right: -10px;
+  @apply absolute w-14 left-4 top-4;
+  @apply sm:fixed sm:w-10 sm:left-12 sm:top-12;
+  @apply lg:w-15 lg:left-18 lg:top-15;
+  /* margin-right: -10px; */
 }
 
 .Line {
   fill: none;
   stroke: #ffffff;
-  stroke-width: 1.5;
   stroke-linecap: round;
   stroke-miterlimit: 10;
+  @apply stroke-2;
+  @apply sm:stroke-2;
+  @apply lg:stroke-1.5;
 }
 
 .Home {
   @apply absolute top-0 text-xs w-full text-center h-full justify-center flex flex-col text-white;
+  @apply lg:left-1 sm:ml-px;
+  polygon {
+    stroke-width: 10;
+  }
 }

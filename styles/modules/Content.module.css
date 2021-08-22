@@ -3,10 +3,10 @@
 }
 
 .Title {
-  @apply text-8xl font-bold;
-  padding-left: 180px;
-  padding-right: 180px;
-  margin-bottom: 50vh;
+  @apply font-bold px-44;
+  @apply px-4 text-4xl mb-20;
+  @apply sm:px-32 sm:text-6xl sm:mb-halfScreenH;
+  @apply lg:px-44 lg:text-8xl;
 }
 
 .TitleNoMargin {
@@ -22,19 +22,26 @@
 
 .Paragraph {
   @apply text-lg text-gray-400;
-  margin-bottom: 50vh;
-  padding-right: 180px;
-  padding-left: 180px;
+
+  @apply px-4 text-sm mb-20;
+  @apply sm:px-32 sm:text-base sm:mb-halfScreenH;
+  @apply lg:px-48 lg:text-base;
 }
 
 .Right {
   @apply text-right;
-  padding-right: 180px;
-  padding-left: 180px;
 }
 
 .Header {
-  padding-top: 150px;
+  @apply pt-24;
+  @apply sm:pt-28;
+  @apply lg:pt-37;
+}
+
+.ImageContainer {
+  @apply px-4 mb-20;
+  @apply sm:px-32 sm:mb-halfScreenH;
+  @apply lg:px-44;
 }
 
 /**
@@ -45,7 +52,7 @@
 
 .HomeTextAnimate {
   @apply relative overflow-hidden w-full;
-  @apply text-6xl h-16;
+  @apply text-5xl h-14;
   @apply sm:text-8xl sm:h-32;
   @apply lg:text-9xl lg:h-36;
 }
@@ -75,15 +82,11 @@
 
 .HomeContainer {
   @apply w-full h-screen top-0 left-0 flex justify-center items-center flex-col !important;
-  /* @apply pl-10;
-  @apply sm:pl-20;
-  @apply lg:pl-48; */
 }
 .HomeBackgroundImage {
-  width: 50%;
-  position: fixed;
-  right: 0;
-  bottom: 0;
+  @apply fixed right-0 bottom-0;
+  @apply w-2/3;
+  @apply sm:w-1/2;
   /* z-index: -1; */
 }
 

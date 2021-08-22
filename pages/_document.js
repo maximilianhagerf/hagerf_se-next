@@ -17,6 +17,7 @@ class MyDocument extends Document {
           />
         </Head>
         <body>
+          <div className="bg" />
           <Main />
           <NextScript />
         </body>

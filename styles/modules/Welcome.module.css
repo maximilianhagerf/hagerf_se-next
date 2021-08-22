@@ -1,6 +1,8 @@
 .Svg {
   @apply mx-auto;
-  max-width: 500px;
+  max-width: 10rem;
+  @apply sm:max-w-sm;
+  @apply lg:max-w-lg;
 }
 
 .Line {
@@ -8,9 +10,12 @@
   stroke: #ffffff;
   stroke-linecap: round;
   stroke-miterlimit: 10;
+  stroke-width: 2;
+  @screen sm {
+    stroke-width: 0.5;
+  }
 }
 
 .Welcome {
-  @apply text-center;
-  margin-bottom: 50vh;
+  @apply text-center mb-20 sm:mb-halfScreenH;
 }

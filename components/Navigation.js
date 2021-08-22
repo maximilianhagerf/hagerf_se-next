@@ -1,11 +1,16 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { AnimateSharedLayout, motion, useAnimation } from "framer-motion";
 import { useRouter } from "next/dist/client/router";
 import { isActiveLink } from "../lib/utils";
 import Link, { LinkProps } from "next/link";
 import ProgressContainer from "../components/ProgressContainer";
+import NavigationToggle from "../components/NavigationToggle";
+import { getBreakpointValue } from "../lib/breakpoint.js";
+import { useWindowDimensions } from "../lib/useWindowDimension.js";
 import styles from "../styles/modules/Navigation.module.css";
 // import { variants } from "../tailwind.config";
+
+const breakpoint = getBreakpointValue("sm");
 
 const links = [
   {
@@ -112,26 +117,81 @@ function NavItem(props) {
 }
 
 const Navigation = () => {
+  const { width, height } = useWindowDimensions();
   const router = useRouter();
+  const [isPhone, setIsPhone] = useState(undefined);
+  const [isHome, setIsHome] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
 
-  return (
-    <>
-      <ProgressContainer />
-      <AnimateSharedLayout>
-        <nav className={styles.Navigation}>
-          {links.map(({ id, name, href }) => (
-            <NavItem
-              id={id}
-              key={name}
-              href={href}
-              name={name}
-              pathname={router.pathname}
-            />
-          ))}
-        </nav>
-      </AnimateSharedLayout>
-    </>
-  );
+  const completedClass = showMenu ? styles.NavigationShow : "";
+
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+  };
+
+  useEffect(() => {
+    if (width <= breakpoint) {
+      setIsPhone(true);
+    } else {
+      setIsPhone(false);
+    }
+
+    if (router.pathname === "/") {
+      setIsHome(true);
+    } else {
+      setIsHome(false);
+    }
+  }, [width, breakpoint, setIsPhone, setIsHome, router]);
+
+  if (isPhone) {
+    return (
+      <>
+        <NavigationToggle
+          toggleMenu={toggleMenu}
+          isHome={isHome}
+          showMenu={showMenu}
+        />
+        <AnimateSharedLayout>
+          <nav
+            className={`${styles.Navigation} ${completedClass}`}
+            onClick={() => toggleMenu()}
+          >
+            {links.map(({ id, name, href }) => (
+              <NavItem
+                id={id}
+                key={name}
+                href={href}
+                name={name}
+                pathname={router.pathname}
+              />
+            ))}
+          </nav>
+        </AnimateSharedLayout>
+      </>
+    );
+  } else {
+    return (
+      <>
+        <AnimateSharedLayout>
+          <nav
+            className={`${styles.Navigation} ${completedClass}`}
+            onClick={() => toggleMenu()}
+          >
+            {links.map(({ id, name, href }) => (
+              <NavItem
+                id={id}
+                key={name}
+                href={href}
+                name={name}
+                pathname={router.pathname}
+              />
+            ))}
+          </nav>
+        </AnimateSharedLayout>
+        <ProgressContainer />
+      </>
+    );
+  }
 };
 
 export default Navigation;

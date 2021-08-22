@@ -1,23 +1,94 @@
 .Navigation {
-  @apply fixed flex font-bold flex-col;
-  right: 78px;
-  top: 130px;
+  @apply fixed flex font-bold flex-col justify-center items-center h-screen;
+  /* @apply transition-all ease-in-out duration-500; */
+  transition: all 0.5s ease 1s, z-index 6s;
+
+  @apply right-0 top-0 bg-black w-full z-auto opacity-0;
+  z-index: -1;
+  @apply sm:right-14 sm:bg-transparent sm:w-auto sm:z-0 sm:opacity-100;
+  @apply lg:right-19;
+}
+
+.NavigationShow {
+  transition: all 0.5s ease 0s, z-index 0s;
+  @apply opacity-100 z-20;
+  @apply opacity-100 sm:z-auto;
 }
 
 .NavUnderline {
   @apply absolute bg-white mx-auto w-full h-full left-0;
-  margin-top: -1px;
+  @apply sm:-mt-px;
   z-index: -1;
 }
 
 .Link {
-  @apply mb-6 sm:mb-8 flex flex-col relative text-gray-700 text-xs hover:text-white tracking-widest;
+  @apply flex flex-col relative text-gray-700 hover:text-white tracking-widest;
   @apply transition-colors ease-in-out duration-500;
-  letter-spacing: 3px;
-  text-orientation: upright;
-  writing-mode: vertical-rl;
+  @apply mb-6 px-2 text-sm;
+  @apply sm:mb-8 sm:px-0 sm:text-xs;
+
+  @screen sm {
+    text-orientation: upright;
+    letter-spacing: 3px;
+    writing-mode: vertical-rl;
+  }
 }
 
 .IsActive {
   @apply text-black hover:text-black;
+}
+
+/**
+ *
+ * Toggle
+ *
+ */
+
+.Toggle {
+  @apply fixed right-4 top-4  z-30 flex flex-col cursor-pointer items-end;
+  width: 30px;
+
+  span {
+    @apply bg-white rounded-sm h-0.5;
+    margin: 5px 0;
+    transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6) 1s;
+  }
+}
+
+.ToggleHide {
+  @apply hidden;
+}
+
+.MenuActive {
+  span {
+    transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6) 0s;
+  }
+  .Stroke1,
+  .Stroke3 {
+    @apply origin-bottom;
+  }
+  .Stroke1 {
+    transform: rotatez(45deg) translate(-4px, 13px);
+  }
+
+  .Stroke2 {
+    @apply origin-top -rotate-45;
+  }
+
+  .Stroke3 {
+    @apply w-1/2;
+    transform: translate(-1.5px, -7px) rotatez(45deg);
+  }
+}
+
+.Stroke1 {
+  @apply w-1/2;
+}
+
+.Stroke2 {
+  @apply w-full;
+}
+
+.Stroke3 {
+  @apply w-3/4;
 }

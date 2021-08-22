@@ -97,14 +97,35 @@ const Logo = () => {
           </svg>
           <motion.span
             className={styles.Home}
-            animate={{
-              opacity: isHover ? 1 : 0,
+            initial={{
+              opacity: 0,
               transition: {
-                delay: 0.2,
+                delay: 0.1,
+              },
+            }}
+            animate={{
+              opacity: router.pathname === "/" || !isHover ? 0 : 0.2,
+              transition: {
+                delay: 0.5,
               },
             }}
           >
-            HOME
+            <svg
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              x="0px"
+              y="0px"
+              viewBox="0 0 315.287 253.748"
+              width="30px"
+            >
+              <g>
+                <polygon
+                  className={styles.Line}
+                  points="293.558,148.638 253.748,148.638 253.748,244.748 61.538,244.748 61.538,148.638 21.728,148.638
+		157.638,12.728 	"
+                />
+              </g>
+            </svg>
           </motion.span>
         </a>
       </Link>

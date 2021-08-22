@@ -1,8 +1,15 @@
+import { useEffect, useState } from "react";
+import { useRouter } from "next/dist/client/router";
+import { getBreakpointValue } from "../lib/breakpoint.js";
+import { useWindowDimensions } from "../lib/useWindowDimension.js";
 import SocialLink from "./SocialLink";
+
 import styles from "../styles/modules/SocialContainer.module.css";
 import github from "../public/images/social/github.svg";
 import dribbble from "../public/images/social/dribbble.svg";
 import linkedin from "../public/images/social/linkedin.svg";
+
+const breakpoint = getBreakpointValue("sm");
 
 const SocialLinks = [
   {
@@ -29,8 +36,21 @@ const SocialLinks = [
 ];
 
 const SocialContainer = () => {
+  const { width, height } = useWindowDimensions();
+  const [isPhone, setIsPhone] = useState("");
+
+  const router = useRouter();
+
+  useEffect(() => {
+    if (router.pathname === "/") {
+      setIsPhone(width < breakpoint ? styles.SocialContainerHidden : "");
+    } else {
+      setIsPhone("");
+    }
+  }, [router, isPhone, width]);
+
   return (
-    <div className={styles.SocialContainer}>
+    <div className={`${styles.SocialContainer} ${isPhone}`}>
       {SocialLinks.map(({ id, key, href, alt, icon }) => (
         <SocialLink id={id} key={key} href={href} alt={alt} icon={icon} />
       ))}

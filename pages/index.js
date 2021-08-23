@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -27,13 +28,11 @@ const backgroundVariants = {
 const item = {
   hidden: {
     opacity: 0,
-    x: 0,
-    y: 300,
+    top: 300,
   },
   visible: {
     opacity: 1,
-    x: 0,
-    y: 0,
+    top: 0,
     transition: {
       ease: "easeOut",
       duration: 0.5,
@@ -41,8 +40,7 @@ const item = {
   },
   exit: {
     opacity: 0,
-    x: 0,
-    y: 300,
+    top: 300,
     transition: {
       duration: 0.5,
     },
@@ -65,6 +63,13 @@ const container = {
 };
 
 export default function Home({ canonical }) {
+  const [isCoverActive, setIsCoverActive] = useState(false);
+  const coverMode = isCoverActive ? styles.HomePhoneCoverActive : "";
+  const forceHover = isCoverActive ? styles.HomeTextHoverForce : "";
+  const onClick = () => {
+    setIsCoverActive(!isCoverActive);
+  };
+
   return (
     <>
       <Head>
@@ -101,7 +106,7 @@ export default function Home({ canonical }) {
           >
             <motion.span
               variants={item}
-              className={`${styles.Yellow} ${styles.HomeTextAnimateWrap}  ${styles.HomeTextHover}`}
+              className={`${styles.Yellow} ${styles.HomeTextAnimateWrap}  ${styles.HomeTextHover} ${forceHover}`}
             >
               <Link href="/about" scroll={false}>
                 <a>
@@ -112,7 +117,7 @@ export default function Home({ canonical }) {
             </motion.span>
           </h1>
           <h1
-            className={`${styles.Title} ${styles.TitleNoMargin} ${styles.HomeTextAnimate}`}
+            className={`${styles.Title} ${styles.TitleNoMargin} ${styles.HomeTextAnimate} ${forceHover}`}
           >
             <motion.span
               variants={item}
@@ -127,6 +132,13 @@ export default function Home({ canonical }) {
             </motion.span>
           </h1>
         </motion.div>
+
+        <div
+          className={`${styles.HomePhoneCover} ${coverMode}`}
+          onClick={onClick}
+        >
+          <span className={styles.HomePhoneCoverText}>Tap anywhere</span>
+        </div>
       </Content>
     </>
   );

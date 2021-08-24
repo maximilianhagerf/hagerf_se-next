@@ -38,12 +38,6 @@
   @apply lg:pt-37;
 }
 
-.ImageContainer {
-  @apply px-4 mb-20;
-  @apply sm:px-32 sm:mb-halfScreenH;
-  @apply lg:px-44;
-}
-
 /**
  *
  * HOME PAGE

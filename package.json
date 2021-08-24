@@ -24,7 +24,8 @@
     "postcss-flexbugs-fixes": "5.0.2",
     "postcss-import": "14.0.2",
     "postcss-preset-env": "6.7.0",
-    "tailwindcss": "^2.2.7"
+    "tailwindcss": "^2.2.7",
+    "react-responsive-carousel": "3.2.11"
   },
   "browserslist": [
     "since 2010"

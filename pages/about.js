@@ -1,7 +1,9 @@
 import Head from "next/head";
 // import Link from "next/link";
-// import Image from "next/image";
+import Image from "next/image";
 import { motion } from "framer-motion";
+import { Carousel } from "react-responsive-carousel";
+
 import Content from "../components/Content";
 import Welcome from "../components/Welcome";
 import styles from "../styles/modules/Content.module.css";
@@ -39,13 +41,44 @@ export default function About({ canonical }) {
             <span className={styles.Yellow}>Designer</span> with over a{" "}
             <span className={styles.Purple}>decade</span> of experience.
             <br />
-            <br />
           </h1>
           <Welcome className={styles.Welcome} />
           <h1 className={`${styles.Title} ${styles.Right}`}>
             I build <span className={styles.Yellow}>digital products</span>
           </h1>
         </motion.header>
+
+        <Carousel
+          preventMovementUntilSwipeScrollTolerance={true}
+          infiniteLoop={true}
+          emulateTouch={true}
+          // autoPlay={true}
+          // interval={"30000"}
+          // showArrows={false}
+          showStatus={false}
+          showIndicators={false}
+          showThumbs={false}
+          useKeyboardArrows={true}
+          // renderArrowPrev={false}
+          // renderArrowNext={false}
+          renderIndicator={false}
+          renderThumbs={false}
+          interval="500"
+          transitionTime="500"
+        >
+          <div>
+            <img src="/images/work/img3.jpg" />
+          </div>
+          <div>
+            <img src="/images/work/img2.jpg" />
+          </div>
+          <div>
+            <img src="/images/work/img1.jpg" />
+          </div>
+          <div>
+            <img src="/images/work/img4.jpg" />
+          </div>
+        </Carousel>
 
         <p className={styles.Paragraph}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc

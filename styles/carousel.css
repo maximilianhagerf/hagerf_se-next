@@ -54,8 +54,8 @@
 }
 .carousel-root {
   /* outline: none; */
-  @apply mb-20 outline-none;
-  @apply sm:px-32 sm:mb-halfScreenH;
+  @apply mb-halfScreenH outline-none;
+  @apply sm:px-32;
   @apply lg:px-44;
 }
 
@@ -114,9 +114,9 @@
   overflow: hidden;
 }
 .carousel.carousel-slider .control-arrow {
-  @apply top-0 bottom-0 text-white text-3xl mt-0 p-3 bg-gray-900;
+  @apply top-0 bottom-0 text-white text-3xl mt-0 p-3 bg-black;
   &:hover {
-    @apply bg-gray-800;
+    @apply bg-gray-900;
     &:before {
     }
   }

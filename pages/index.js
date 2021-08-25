@@ -95,14 +95,14 @@ export default function Home({ canonical }) {
           </motion.div>
 
           <h1
-            className={`${styles.Title} ${styles.TitleNoMargin} ${styles.HomeTextAnimate}`}
+            className={`${styles.Title} ${styles.NoMargin} ${styles.HomeTextAnimate}`}
           >
             <motion.span variants={item} className={styles.HomeTextAnimateWrap}>
               I'm
             </motion.span>
           </h1>
           <h1
-            className={`${styles.Title} ${styles.TitleNoMargin} ${styles.HomeTextAnimate}`}
+            className={`${styles.Title} ${styles.NoMargin} ${styles.HomeTextAnimate}`}
           >
             <motion.span
               variants={item}
@@ -117,7 +117,7 @@ export default function Home({ canonical }) {
             </motion.span>
           </h1>
           <h1
-            className={`${styles.Title} ${styles.TitleNoMargin} ${styles.HomeTextAnimate} ${forceHover}`}
+            className={`${styles.Title} ${styles.NoMargin} ${styles.HomeTextAnimate} ${forceHover}`}
           >
             <motion.span
               variants={item}

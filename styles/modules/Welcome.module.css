@@ -17,5 +17,5 @@
 }
 
 .Welcome {
-  @apply text-center mb-20 sm:mb-halfScreenH;
+  @apply text-center mb-halfScreenH;
 }

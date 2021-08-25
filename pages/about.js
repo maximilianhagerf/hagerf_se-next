@@ -8,6 +8,11 @@ import Content from "../components/Content";
 import Welcome from "../components/Welcome";
 import styles from "../styles/modules/Content.module.css";
 
+import logo1 from "../public/images/work/ba.svg";
+import logo2 from "../public/images/work/dino.svg";
+import logo3 from "../public/images/work/appeario.png";
+import logo4 from "../public/images/work/hysch.svg";
+
 const variants = {
   hidden: {
     opacity: 0,
@@ -21,7 +26,20 @@ const variants = {
   },
 };
 
+function importAll(r) {
+  let cache = {};
+  r.keys().forEach((item) => (cache[item.replace("./", "")] = r(item)));
+  return cache;
+}
+
+const cache = importAll(
+  require.context("../public/images/icons", false, /\.(png|jpe?g|svg)$/)
+);
+
+const images = Object.entries(cache).map((module) => module[1].default);
+
 export default function About({ canonical }) {
+  console.log(cache);
   return (
     <>
       <Head>
@@ -43,11 +61,12 @@ export default function About({ canonical }) {
             <br />
           </h1>
           <Welcome className={styles.Welcome} />
-          <h1 className={`${styles.Title} ${styles.Right}`}>
+          <h1
+            className={`${styles.Title} ${styles.Right} ${styles.SmallMargin}`}
+          >
             I build <span className={styles.Yellow}>digital products</span>
           </h1>
         </motion.header>
-
         <Carousel
           preventMovementUntilSwipeScrollTolerance={true}
           infiniteLoop={true}
@@ -79,6 +98,43 @@ export default function About({ canonical }) {
             <img src="/images/work/img4.jpg" />
           </div>
         </Carousel>
+        <h1 className={`${styles.Title} ${styles.SmallMargin}`}>
+          I design <span className={styles.Yellow}>logotypes & graphics</span>
+        </h1>
+        <div className={styles.AboutLogoContainer}>
+          <div className="col-span-2">
+            <Image src={logo4} alt="fds" />
+          </div>
+          <div className={styles.AboutLogoContainerInner}>
+            <div>
+              <Image src={logo1} alt="fds" />
+            </div>
+            <div>
+              <Image src={logo2} alt="fds" />
+            </div>
+            <div>
+              <Image src={logo3} alt="fds" />
+            </div>
+          </div>
+        </div>
+        <h1 className={`${styles.Title} ${styles.SmallMargin}`}>
+          I have <span className={styles.Yellow}>experience</span> in many
+          things
+        </h1>
+        <ul className={styles.AboutIconList}>
+          {/* {images.map(({ image }) => ({ image }))} */}
+          {Object.entries(cache).map((module) => {
+            const image = module[1].default;
+            // const src = image.src.replace("/_next/static/image/public/", "");
+            const name = module[0].replace("./", "");
+            return (
+              <li>
+                <Image src={image} alt={name} />
+                {/* <p>{name}</p> */}
+              </li>
+            );
+          })}
+        </ul>
 
         <p className={styles.Paragraph}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc

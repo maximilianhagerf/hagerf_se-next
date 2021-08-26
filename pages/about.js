@@ -13,6 +13,11 @@ import logo2 from "../public/images/work/dino.svg";
 import logo3 from "../public/images/work/appeario.png";
 import logo4 from "../public/images/work/hysch.svg";
 
+import slide1 from "../public/images/work/img3.jpg";
+import slide2 from "../public/images/work/img2.jpg";
+import slide3 from "../public/images/work/img1.jpg";
+import slide4 from "../public/images/work/img4.jpg";
+
 const variants = {
   hidden: {
     opacity: 0,
@@ -85,17 +90,17 @@ export default function About({ canonical }) {
           interval="500"
           transitionTime="500"
         >
-          <div>
-            <img src="/images/work/img3.jpg" />
+          <div className={styles.ImageOverride}>
+            <Image src={slide1} alt="fds" layout="fill" loading="eager" />
           </div>
-          <div>
-            <img src="/images/work/img2.jpg" />
+          <div className={styles.ImageOverride}>
+            <Image src={slide2} alt="fds" layout="fill" loading="eager" />
           </div>
-          <div>
-            <img src="/images/work/img1.jpg" />
+          <div className={styles.ImageOverride}>
+            <Image src={slide3} alt="fds" layout="fill" loading="eager" />
           </div>
-          <div>
-            <img src="/images/work/img4.jpg" />
+          <div className={styles.ImageOverride}>
+            <Image src={slide4} alt="fds" layout="fill" loading="eager" />
           </div>
         </Carousel>
         <h1 className={`${styles.Title} ${styles.SmallMargin}`}>
@@ -103,17 +108,17 @@ export default function About({ canonical }) {
         </h1>
         <div className={styles.AboutLogoContainer}>
           <div className="col-span-2">
-            <Image src={logo4} alt="fds" />
+            <Image src={logo4} alt="fds" loading="eager" />
           </div>
           <div className={styles.AboutLogoContainerInner}>
             <div>
-              <Image src={logo1} alt="fds" />
+              <Image src={logo1} alt="fds" loading="eager" />
             </div>
             <div>
-              <Image src={logo2} alt="fds" />
+              <Image src={logo2} alt="fds" loading="eager" />
             </div>
             <div>
-              <Image src={logo3} alt="fds" />
+              <Image src={logo3} alt="fds" loading="eager" />
             </div>
           </div>
         </div>
@@ -128,73 +133,49 @@ export default function About({ canonical }) {
             // const src = image.src.replace("/_next/static/image/public/", "");
             const name = module[0].replace("./", "");
             return (
-              <li>
-                <Image src={image} alt={name} />
+              <li key={name}>
+                <Image src={image} alt={name} loading="eager" />
                 {/* <p>{name}</p> */}
               </li>
             );
           })}
         </ul>
-
+        <h1 className={`${styles.Title} ${styles.SmallMargin}`}>
+          A little <span className={styles.Yellow}>about</span> me
+        </h1>
         <p className={styles.Paragraph}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-          venenatis, lacus vitae laoreet commodo, mi felis fermentum mi, vitae
-          hendrerit augue arcu ut nibh. Vestibulum vestibulum porta risus, a
-          efficitur arcu tristique ut. Aenean at erat sed sem pulvinar pretium.
-          Cras sodales tortor sed mi consectetur, ac lobortis ex congue. Mauris
-          gravida lectus eget quam finibus finibus. Quisque nec nisl rhoncus,
-          cursus enim a, posuere libero. Etiam in nisl quis ante suscipit
-          rutrum. Etiam nec ante ipsum. Maecenas cursus sollicitudin neque vitae
-          rhoncus. Nam facilisis erat vel porttitor porta. Donec ultrices, arcu
-          et ultricies hendrerit, elit mi eleifend odio, a fermentum neque lacus
-          vel sapien. Nunc quis tellus feugiat neque pulvinar malesuada. Duis
-          tristique accumsan tincidunt. Praesent consectetur interdum orci eget
-          suscipit. Aenean non ullamcorper diam, vitae tincidunt felis.
-          Vestibulum vehicula turpis tellus, ut laoreet ante gravida vitae. Sed
-          eu nisl justo. Vestibulum sed pretium leo, sit amet hendrerit velit.
-          In non sollicitudin arcu. In semper nisl at sodales varius. Mauris
-          venenatis odio vitae metus
+          Maximilian is an experienced <strong>designer and developer</strong> -
+          a versatile and customer-oriented engineer.
         </p>
         <p className={styles.Paragraph}>
-          vulputate rutrum. In id vehicula eros. Pellentesque sit amet dolor
-          ullamcorper, consectetur felis non, auctor ligula. Nam nec suscipit
-          ipsum. Integer in nisl vel lacus dictum volutpat. Curabitur vulputate
-          mauris sem, vitae pulvinar mi egestas eu. Phasellus tempor vitae felis
-          vel laoreet. Duis diam arcu, ullamcorper id leo quis, ultricies
-          posuere lorem. Etiam tincidunt at ligula nec tristique. Ut nibh erat,
-          tempor vel turpis vitae, ullamcorper pharetra nisi. Mauris eu
-          malesuada ante. Duis tincidunt at velit nec accumsan. Pellentesque
-          condimentum elementum est, vel blandit dolor placerat vel. Cras eros
-          felis, fringilla rutrum elit id, fermentum pretium orci. Duis eget
-          rutrum quam, quis elementum nulla. Donec a lacinia ante. Sed vitae
-          tempus mauris, id bibendum lacus. Cras fringilla lectus nec quam
-          ultricies pretium. Curabitur venenatis vulputate enim at pretium.
-          Integer et diam in augue venenatis luctus et nec nisi. Nullam
-          pellentesque maximus lorem, non vulputate augue finibus ac.
-          Suspendisse accumsan libero ut orci hendrerit faucibus. Nunc
-          pellentesque erat quis sem laoreet, nec auctor diam faucibus.
-          Vestibulum luctus semper posuere. Integer vehicula erat ut nisi
-          dictum, quis interdum erat sagittis. Mauris nec imperdiet libero.
-          Aenean malesuada sit amet sem et lacinia. Vestibulum quam diam,
-          consectetur sed nisl ut, vulputate bibendum nibh. Morbi vitae blandit
-          mi. Praesent vel tincidunt lectus, sed ullamcorper urna. Donec leo
-          arcu, porta varius vehicula maximus, vulputate et tortor. Sed luctus
-          elit in magna ornare, pellentesque ultrices enim finibus. Nullam in
-          lacus efficitur, bibendum nunc eu, mollis erat. Vestibulum at ipsum
-          augue. Pellentesque habitant morbi tristique senectus et netus et
-          malesuada fames ac turpis egestas. Sed eget elementum mauris.
-          Phasellus vestibulum fringilla rutrum. Quisque dictum ultricies nisi,
-          vel consectetur enim. Maecenas placerat in velit vel placerat. Nam
-          posuere velit lacinia lorem egestas convallis. Phasellus a viverra
-          mauris. Sed mattis mi sit amet finibus volutpat. Etiam enim dui,
-          commodo at finibus at, dictum nec massa. In feugiat mi at ullamcorper
-          congue. Fusce vel lectus non neque sodales pharetra. In mattis dolor
-          vel lacus sagittis blandit. Aenean scelerisque est ut ante varius,
-          ultrices hendrerit dolor dapibus. Vestibulum ante ipsum primis in
-          faucibus orci luctus et ultrices posuere cubilia curae; Vivamus
-          imperdiet id ante sed lobortis. Sed laoreet nisl elementum felis
-          volutpat, sit amet cursus felis euismod. In semper blandit rhoncus.
-          Curabitur et mauris ac dui facilisis malesuada.
+          Maximilian has worked with
+          <strong> interaction design, UI-UX, graphics and programming </strong>
+          since <strong>graduating in 2006</strong>. He has developed solutions
+          to interaction technical problems, constructed sketches, detailed
+          design and implementations. Maximilian has been responsible for
+          developing efficient user interfaces for various products and
+          platforms and in a number of different industries.
+        </p>
+        <p className={styles.Paragraph}>
+          Maximilian wants to work and develop as an engineer and designer in a
+          creative and versatile environment where he can use his abilities,
+          experiences and his mind for details. While he likes to work with the
+          latest technologies and principles, he also wants to help
+          <strong> improve existing technical solutions </strong> and of course
+          realize new and interesting products.
+        </p>
+        <p className={styles.Paragraph}>
+          Maximilian is very<strong> social, open and communicative</strong>.
+          Likes to work in groups and also has a good ability to work
+          individually. He is easy to express himself, both orally and in
+          writing.
+        </p>
+        <p className={styles.Paragraph}>
+          Has since the summer of 2016 lived in Chile and
+          <strong> Bolivia</strong> with his
+          <strong> wife and two daughters</strong>, 3 and 2 years. They met in
+          Sweden in 2012 when she received her doctorate in economics. The
+          family will move to Sweden soon.
         </p>
       </Content>
     </>

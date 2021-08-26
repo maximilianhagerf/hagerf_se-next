@@ -6,13 +6,12 @@
 }
 
 .MailButton {
-  @apply flex justify-center bg-ghost-90 cursor-pointer;
+  @apply flex justify-center cursor-pointer origin-bottom-right;
   @apply transition-all duration-500 ease-in-out;
-  transform-origin: bottom right;
   bottom: 50px;
   right: 50px;
   @apply w-full m-4;
-  @apply sm:m-0 sm:border-yellow sm:border-2;
+  @apply sm:m-0 sm:border-yellow sm:border-2 sm:bg-ghost-90;
 
   &.isBottom {
     @apply sm:scale-150;
@@ -44,8 +43,8 @@
 .Text {
   @apply relative text-yellow px-0 overflow-hidden text-center;
   @apply transition-all duration-700 ease-in-out;
-  @apply py-2 px-3 border-yellow border-2;
-  @apply sm:py-2 sm:px-0 sm:w-0 sm:border-0;
+  @apply py-2 px-3 border-yellow border-2 bg-ghost-90;
+  @apply sm:py-2 sm:px-0 sm:w-0 sm:border-0 sm:bg-transparent;
   @apply lg:py-3;
   &:hover {
     .TextInside {

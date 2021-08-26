@@ -42,7 +42,6 @@ const NavigationToggle = ({ toggleMenu, isHome, showMenu }) => {
       variants={variants}
       initial="hidden"
       animate={controls}
-      for="check"
       onClick={() => toggleMenu()}
       className={`${styles.Toggle} ${menuActive} `}
     >

@@ -41,10 +41,9 @@ const cache = importAll(
   require.context("../public/images/icons", false, /\.(png|jpe?g|svg)$/)
 );
 
-const images = Object.entries(cache).map((module) => module[1].default);
+// const images = Object.entries(cache).map((module) => module[1].default);
 
 export default function About({ canonical }) {
-  console.log(cache);
   return (
     <>
       <Head>

@@ -38,7 +38,6 @@ const ProgressContainer = () => {
   });
 
   useEffect(() => {
-    console.log(router.pathname);
     if (router.pathname === "/") {
       controls.start("hidden");
     } else {

@@ -1,6 +1,11 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/dist/client/router";
-import { motion, useAnimation } from "framer-motion";
+import {
+  motion,
+  useAnimation,
+  useViewportScroll,
+  useTransform,
+} from "framer-motion";
 import styles from "../styles/modules/MailButton.module.css";
 
 const confirmVariants = {
@@ -43,6 +48,10 @@ const MailButton = () => {
   const controls = useAnimation();
   const [isCopied, setIsCopied] = useState(false);
 
+  const [currentPrecent, setCurrentPercent] = useState(null);
+  const { scrollYProgress } = useViewportScroll();
+  const yRange = useTransform(scrollYProgress, [0, 1], [0, 100]);
+
   const mainControls = useAnimation();
   const router = useRouter();
 
@@ -58,6 +67,16 @@ const MailButton = () => {
       controls.start("hidden");
     }
   }, [mainControls, router, controls, isCopied]);
+
+  useEffect(
+    () =>
+      yRange.onChange((v) => {
+        setCurrentPercent(Math.trunc(yRange.current));
+      }),
+    [yRange]
+  );
+
+  const isBottom = currentPrecent > 99 ? styles.isBottom : "";
 
   const onClick = () => {
     copyTextToClipboard("maximilian.hagerf@gmail.com")
@@ -80,7 +99,7 @@ const MailButton = () => {
       variants={containerVariants}
       className={styles.MailButtonContainer}
     >
-      <div className={styles.MailButton} onClick={onClick}>
+      <div className={`${styles.MailButton} ${isBottom}`} onClick={onClick}>
         <motion.span
           initial="hidden"
           animate={controls}

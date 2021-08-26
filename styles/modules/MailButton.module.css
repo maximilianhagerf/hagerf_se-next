@@ -6,13 +6,19 @@
 }
 
 .MailButton {
-  @apply flex border-2 border-yellow justify-center bg-ghost-90 cursor-pointer;
+  @apply flex justify-center bg-ghost-90 cursor-pointer;
+  @apply transition-all duration-500 ease-in-out;
+  transform-origin: bottom right;
   bottom: 50px;
   right: 50px;
+  @apply w-full m-4;
+  @apply sm:m-0 sm:border-yellow sm:border-2;
 
-  @apply w-full m-6;
-  @apply sm:m-0;
+  &.isBottom {
+    @apply sm:scale-150;
+  }
 
+  &.isBottom,
   &:hover {
     .Text {
       @apply sm:w-60;
@@ -38,8 +44,8 @@
 .Text {
   @apply relative text-yellow px-0 overflow-hidden text-center;
   @apply transition-all duration-700 ease-in-out;
-  @apply py-2;
-  @apply sm:py-2 sm:w-0;
+  @apply py-2 px-3 border-yellow border-2;
+  @apply sm:py-2 sm:px-0 sm:w-0 sm:border-0;
   @apply lg:py-3;
   &:hover {
     .TextInside {
@@ -58,15 +64,24 @@
 }
 
 .IconContainer {
-  @apply justify-center flex bg-ghost-90;
+  @apply justify-center flex;
   @apply transition-all duration-700 ease-in-out;
-  @apply hidden;
-  @apply sm:flex;
+  @apply bg-yellow;
+  @apply sm:bg-ghost-90;
+  .Svg {
+    path,
+    line {
+      stroke: #000;
+      @screen sm {
+        stroke: rgba(245, 223, 77, var(--tw-bg-opacity));
+      }
+    }
+  }
 }
 
 .Icon {
   @apply relative;
-  @apply mx-1 w-6;
+  @apply mx-2 w-6;
   @apply sm:mx-2 sm:w-8;
   @apply lg:mx-4 lg:w-9;
 }

@@ -141,7 +141,7 @@ const Navigation = () => {
     } else {
       setIsHome(false);
     }
-  }, [width, breakpoint, setIsPhone, setIsHome, router]);
+  }, [width, setIsPhone, setIsHome, router]);
 
   if (isPhone) {
     return (

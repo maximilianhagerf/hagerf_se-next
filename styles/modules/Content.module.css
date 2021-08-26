@@ -19,6 +19,11 @@
   /* @apply lg:mb-20; */
 }
 
+.LastMargin {
+  @apply mb-20;
+  @apply sm:mb-44 !important;
+}
+
 .Yellow {
   @apply text-yellow;
 }

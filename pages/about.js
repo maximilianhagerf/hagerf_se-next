@@ -170,7 +170,7 @@ export default function About({ canonical }) {
           individually. He is easy to express himself, both orally and in
           writing.
         </p>
-        <p className={styles.Paragraph}>
+        <p className={`${styles.Paragraph} ${styles.LastMargin}`}>
           Has since the summer of 2016 lived in Chile and
           <strong> Bolivia</strong> with his
           <strong> wife and two daughters</strong>, 3 and 2 years. They met in

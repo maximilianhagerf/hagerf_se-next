@@ -55,6 +55,7 @@
 
 .ImageOverride {
   width: 100%;
+  line-height: 0;
 
   > div {
     position: unset !important;

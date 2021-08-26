@@ -30,8 +30,12 @@
   @apply text-lg text-gray-400;
 
   @apply px-4 text-sm mb-20;
-  @apply sm:px-32 sm:text-base sm:mb-halfScreenH;
-  @apply lg:px-48 lg:text-base;
+  @apply sm:px-32 sm:text-base sm:mb-20;
+  @apply lg:px-44 lg:text-xl;
+
+  strong {
+    @apply text-yellow font-normal;
+  }
 }
 
 .Right {
@@ -42,6 +46,22 @@
   @apply pt-24;
   @apply sm:pt-28;
   @apply lg:pt-37;
+}
+
+.ImageOverride {
+  width: 100%;
+
+  > div {
+    position: unset !important;
+    display: inline-block !important;
+  }
+
+  img {
+    object-fit: contain;
+    width: 100% !important;
+    position: relative !important;
+    height: unset !important;
+  }
 }
 
 /**
@@ -140,6 +160,10 @@
 }
 
 .AboutLogoContainerInner {
+  @apply grid items-start justify-items-center;
+  @apply grid-cols-3 gap-2;
+  @apply sm:grid-cols-1 sm:gap-1;
+
   > div {
     @apply mb-20;
   }
@@ -147,8 +171,8 @@
 .AboutIconList {
   @apply grid justify-items-center items-center;
   @apply grid-cols-4 gap-4 px-4 mb-halfScreenH;
-  @apply sm:px-32 sm:gap-8 sm:grid-cols-4;
-  @apply lg:px-44 lg:grid-cols-8;
+  @apply sm:px-32 sm:gap-8 sm:grid-cols-5;
+  @apply lg:px-44 lg:gap-8 lg:grid-cols-8;
   li {
   }
 }

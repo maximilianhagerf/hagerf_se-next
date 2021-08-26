@@ -45,7 +45,7 @@ const SocialLink = ({ id, href, alt, icon }) => {
       custom={id}
     >
       <Link href={href} passHref={true} target="_blank">
-        <a>
+        <a target="_blank">
           <Image src={icon} alt={alt} className={styles.Icon} />
         </a>
       </Link>

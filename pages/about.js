@@ -6,6 +6,9 @@ import { Carousel } from "react-responsive-carousel";
 
 import Content from "../components/Content";
 import Welcome from "../components/Welcome";
+import Fullstack from "../components/Fullstack";
+import Interaction from "../components/Interaction";
+
 import styles from "../styles/modules/Content.module.css";
 
 import logo1 from "../public/images/work/ba.svg";
@@ -18,15 +21,39 @@ import slide2 from "../public/images/work/img2.jpg";
 import slide3 from "../public/images/work/img1.jpg";
 import slide4 from "../public/images/work/img4.jpg";
 
-const variants = {
+const item = {
   hidden: {
     opacity: 0,
+    top: 300,
   },
   visible: {
     opacity: 1,
+    top: 0,
     transition: {
-      delay: 1,
+      ease: "easeOut",
       duration: 0.5,
+    },
+  },
+  exit: {
+    opacity: 0,
+    top: 300,
+    transition: {
+      duration: 0.2,
+    },
+  },
+  transition: {},
+};
+
+const container = {
+  visible: {
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 1.5,
+    },
+  },
+  exit: {
+    transition: {
+      staggerChildren: 0.2,
     },
   },
 };
@@ -54,23 +81,39 @@ export default function About({ canonical }) {
         <motion.header
           initial="hidden"
           animate="visible"
-          exit="hidden"
-          variants={variants}
+          exit="exit"
+          variants={container}
           className={styles.Header}
         >
-          <h1 className={styles.Title}>
-            <span className={styles.Yellow}>Developer</span> &{" "}
-            <span className={styles.Yellow}>Designer</span> with over a{" "}
-            <span className={styles.Purple}>decade</span> of experience.
+          <h1 className={`${styles.Title} ${styles.NoMargin}`}>
+            <motion.span variants={item} className={styles.Yellow}>
+              Developer
+              <Fullstack />
+            </motion.span>
+            <motion.span variants={item}> & </motion.span>
+          </h1>
+          <h1 className={`${styles.Title} ${styles.NoMargin}`}>
+            <motion.span variants={item} className={styles.Yellow}>
+              Designer
+              <Interaction />
+            </motion.span>
+            <motion.span variants={item}> with over a </motion.span>
+          </h1>
+          <h1 className={`${styles.Title} ${styles.NoMargin}`}>
+            <motion.span variants={item} className={styles.Purple}>
+              decade
+            </motion.span>
+            <motion.span variants={item}> of </motion.span>
+          </h1>
+          <h1 className={`${styles.Title} ${styles.NoMargin}`}>
+            <motion.span variants={item}>experience.</motion.span>
             <br />
           </h1>
           <Welcome className={styles.Welcome} />
-          <h1
-            className={`${styles.Title} ${styles.Right} ${styles.SmallMargin}`}
-          >
-            I build <span className={styles.Yellow}>digital products</span>
-          </h1>
         </motion.header>
+        <h1 className={`${styles.Title} ${styles.Right} ${styles.SmallMargin}`}>
+          I build <span className={styles.Yellow}>digital products</span>
+        </h1>
         <Carousel
           preventMovementUntilSwipeScrollTolerance={true}
           infiniteLoop={true}

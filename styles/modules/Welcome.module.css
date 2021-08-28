@@ -12,10 +12,43 @@
   stroke-miterlimit: 10;
   stroke-width: 2;
   @screen sm {
-    stroke-width: 0.5;
+    stroke-width: 2;
+  }
+  @screen lg {
+    stroke-width: 1.5;
   }
 }
 
 .Welcome {
-  @apply text-center mb-halfScreenH;
+  @apply -rotate-12;
+  @apply absolute text-center;
+  @apply w-80 bottom-20 right-44 hidden;
+  @apply sm:w-48 sm:bottom-20 sm:right-32 sm:block;
+  @apply lg:w-80 lg:bottom-20 lg:right-44;
+}
+
+.Fullstack {
+  @apply absolute;
+  top: -5px;
+  left: -5px;
+  width: 150px;
+  @screen sm {
+    width: 250px;
+    top: -5px;
+    left: -5px;
+  }
+  @screen lg {
+    width: 300px;
+  }
+}
+
+.FullstackLine {
+  fill: none;
+  stroke: #ffffff;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+  stroke-width: 2;
+  @screen sm {
+    stroke-width: 1;
+  }
 }

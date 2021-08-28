@@ -5,7 +5,7 @@
 
   @apply right-0 top-0 bg-black w-full z-auto opacity-0;
   z-index: -1;
-  @apply sm:right-14 sm:bg-transparent sm:w-auto sm:z-0 sm:opacity-100;
+  @apply sm:right-14 sm:bg-transparent sm:w-auto sm:opacity-100 sm:z-20;
   @apply lg:right-19;
 }
 

@@ -8,9 +8,7 @@ import styles from "../styles/modules/Layout.module.css";
 const Layout = ({ children }) => {
   return (
     <div className={styles.Layout}>
-      <Navigation />
       <Logo />
-      <MailButton />
       <AnimatePresence
         exitBeforeEnter
         // initial={false}
@@ -18,6 +16,8 @@ const Layout = ({ children }) => {
       >
         {children}
       </AnimatePresence>
+      <Navigation />
+      <MailButton />
       <SocialContainer />
     </div>
   );

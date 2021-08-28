@@ -3,10 +3,13 @@
 }
 
 .Title {
-  @apply font-bold px-44;
+  @apply font-bold px-44 overflow-hidden;
   @apply px-4 text-4xl mb-20;
-  @apply sm:px-32 sm:text-6xl sm:mb-halfScreenH;
+  @apply sm:px-32 sm:text-7xl sm:mb-halfScreenH;
   @apply lg:px-44 lg:text-8xl;
+  span {
+    @apply relative;
+  }
 }
 
 .NoMargin {
@@ -25,7 +28,7 @@
 }
 
 .Yellow {
-  @apply text-yellow;
+  @apply text-yellow relative;
 }
 .Purple {
   @apply text-purple;
@@ -48,9 +51,12 @@
 }
 
 .Header {
-  @apply pt-24;
-  @apply sm:pt-28;
+  @apply relative pt-24 mb-halfScreenH;
+  @apply sm:pt-28 sm:mb-halfScreenH;
   @apply lg:pt-37;
+  h1 {
+    padding-top: 7px;
+  }
 }
 
 .ImageOverride {

@@ -1,6 +1,6 @@
 .Logo {
   @apply absolute w-14 left-4 top-4;
-  @apply sm:fixed sm:w-10 sm:left-12 sm:top-12;
+  @apply sm:fixed sm:w-10 sm:left-12 sm:top-12 sm:z-20;
   @apply lg:w-15 lg:left-18 lg:top-15;
   /* margin-right: -10px; */
 }

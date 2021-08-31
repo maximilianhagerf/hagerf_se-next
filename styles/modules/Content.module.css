@@ -12,21 +12,6 @@
   }
 }
 
-.NoMargin {
-  @apply mb-0;
-}
-
-.SmallMargin {
-  @apply mb-20;
-  @apply sm:mb-28;
-  /* @apply lg:mb-20; */
-}
-
-.LastMargin {
-  @apply mb-20;
-  @apply sm:mb-44 !important;
-}
-
 .Yellow {
   @apply text-yellow relative;
 }
@@ -193,3 +178,31 @@
  * WORK PAGE
  *
  */
+
+.WorkCV {
+  @apply relative mb-halfScreenH inline-block mx-auto;
+  @apply w-20 -left-3;
+  @apply sm:w-60 sm:p-4 sm:-left-9;
+  @apply lg:w-80 lg:p-4 lg:-left-9;
+}
+
+/**
+ *
+ * Override
+ *
+ */
+
+.NoMargin {
+  @apply mb-0;
+}
+
+.SmallMargin {
+  @apply mb-20;
+  @apply sm:mb-28;
+  /* @apply lg:mb-20; */
+}
+
+.LastMargin {
+  @apply mb-20;
+  @apply sm:mb-44 !important;
+}

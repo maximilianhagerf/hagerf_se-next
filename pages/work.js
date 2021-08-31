@@ -1,8 +1,9 @@
 import Head from "next/head";
-// import Link from "next/link";
-// import Image from "next/image";
+import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import Content from "../components/Content";
+import pdf from "../public/images/pdf.svg";
 import styles from "../styles/modules/Content.module.css";
 
 const variants = {
@@ -32,9 +33,9 @@ export default function About({ canonical }) {
           animate="visible"
           exit="hidden"
           variants={variants}
-          className={styles.Header}
+          className={`${styles.Header} ${styles.NoMargin}`}
         >
-          <h1 className={styles.Title}>
+          <h1 className={`${styles.Title}`}>
             <span className={styles.Yellow}>Work </span>
             <span className={styles.Purple}>Work </span>
             <span className={styles.Yellow}>Work </span>
@@ -44,30 +45,15 @@ export default function About({ canonical }) {
             <span className={styles.Yellow}>Work </span>
             <span className={styles.Purple}>Work </span>
             <span className={styles.Yellow}>Work </span>
-            <span className={styles.Purple}>Work </span>
-            <span className={styles.Yellow}>Work </span>
-            <span className={styles.Purple}>Work </span>
           </h1>
         </motion.header>
-
-        <p className={styles.Paragraph}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-          venenatis, lacus vitae laoreet commodo, mi felis fermentum mi, vitae
-          hendrerit augue arcu ut nibh. Vestibulum vestibulum porta risus, a
-          efficitur arcu tristique ut. Aenean at erat sed sem pulvinar pretium.
-        </p>
-        <p className={styles.Paragraph}>
-          vulputate rutrum. In id vehicula eros. Pellentesque sit amet dolor
-          ullamcorper, consectetur felis non, auctor ligula. Nam nec suscipit
-          ipsum. Integer in nisl vel lacus dictum volutpat. Curabitur vulputate
-          mauris sem, vitae pulvinar mi egestas eu. Phasellus tempor vitae felis
-          vel laoreet. Duis diam arcu, ullamcorper id leo quis, ultricies
-          posuere lorem. Etiam tincidunt at ligula nec tristique. Ut nibh erat,
-          tempor vel turpis vitae, ullamcorper pharetra nisi. Mauris eu
-          malesuada ante. Duis tincidunt at velit nec accumsan. Pellentesque
-          condimentum elementum est, vel blandit dolor placerat vel. Cras eros
-          felis, fringilla rutrum elit id, fermentum pretium orci. Duis eget
-        </p>
+        <div className="flex justify-center">
+          <Link href="../static/Maximilian_Hagerf.pdf">
+            <a className={styles.WorkCV} target="_blank">
+              <Image src={pdf} alt="fds" />
+            </a>
+          </Link>
+        </div>
       </Content>
     </>
   );

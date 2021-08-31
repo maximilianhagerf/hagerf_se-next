@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      NEXT_PUBLIC_BASE_PATH: /hagerf_se-next
+      NEXT_PUBLIC_BASE_PATH: /maximilianhagerf.github.io
 
     strategy:
       matrix:

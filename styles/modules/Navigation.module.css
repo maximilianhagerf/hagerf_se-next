@@ -11,7 +11,7 @@
 
 .NavigationShow {
   transition: all 0.5s ease 0s, z-index 0s;
-  @apply opacity-100 z-20;
+  @apply opacity-100 z-40;
   @apply opacity-100 sm:z-auto;
 }
 
@@ -45,7 +45,7 @@
  */
 
 .Toggle {
-  @apply fixed right-4 top-4  z-30 flex flex-col cursor-pointer items-end;
+  @apply fixed right-4 top-4  z-50 flex flex-col cursor-pointer items-end;
   width: 30px;
 
   span {

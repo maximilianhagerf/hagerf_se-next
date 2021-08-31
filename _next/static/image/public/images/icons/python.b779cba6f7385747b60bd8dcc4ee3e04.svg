@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1"
+	 id="Layer_2_2_" inkscape:export-filename="/home/el/Documents/images/svg/Python/python-powered-landscape-200.png" inkscape:export-xdpi="25.714285" inkscape:export-ydpi="25.714285" inkscape:version="0.43" sodipodi:docbase="/home/el/Documents/images/svg/Python" sodipodi:docname="python-powered-landscape.svg" sodipodi:version="0.32" xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:ns="http://ns.adobe.com/SaveForWeb/1.0/" xmlns:ns0="http://ns.adobe.com/Variables/1.0/" xmlns:ns1="http://ns.adobe.com/Flows/1.0/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://inkscape.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xap="http://ns.adobe.com/xap/1.0/" xmlns:xapGImg="http://ns.adobe.com/xap/1.0/g/img/"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 235.132 235.495"
+	 style="enable-background:new 0 0 235.132 235.495;" xml:space="preserve">
+<style type="text/css">
+	.st0{display:none;}
+	.st1{display:inline;fill:none;}
+	.st2{fill:url(#SVGID_1_);}
+	.st3{fill:url(#SVGID_2_);}
+</style>
+<g id="g318" class="st0">
+	<rect id="rect320" x="324.689" y="12.127" class="st1" width="66.849" height="33.538"/>
+	
+		<text transform="matrix(0.998 0 0 1 324.6886 19.38)" style="display:inline;fill:#446785; font-family:'CourierNewPSMT'; font-size:5.9506px;">HEX #446785</text>
+	
+		<text transform="matrix(0.998 0 0 1 324.6886 26.6202)" style="display:inline;fill:#446785; font-family:'CourierNewPSMT'; font-size:5.9506px;">RGB 68,103,133</text>
+	
+		<text transform="matrix(0.998 0 0 1 324.6886 33.8614)" style="display:inline;fill:#446785; font-family:'CourierNewPSMT'; font-size:5.9506px;">PANTONE 548</text>
+</g>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="174.5182" y1="86.3635" x2="-0.4989" y2="87.7549">
+	<stop  offset="0" style="stop-color:#366A96"/>
+	<stop  offset="1" style="stop-color:#3679B0"/>
+</linearGradient>
+<path class="st2" d="M145.73,2.278c-19.489-3.213-40.385-2.856-56.682,0c-24.004,4.2-28.351,13.021-28.351,29.234v21.4h56.703v7.14
+	H60.696H39.422c-16.486,0-30.914,9.849-35.429,28.519c-5.208,21.4-5.439,34.715,0,57.06c4.032,16.633,13.63,28.519,30.116,28.519
+	h19.489v-25.663c0-18.544,16.213-34.946,35.45-34.946h56.682c15.772,0,28.352-12.853,28.352-28.541v-53.49
+	C174.081,16.286,161.124,4.819,145.73,2.278z M85.499,38.652c-5.88,0-10.627-4.788-10.627-10.69c0-5.922,4.746-10.711,10.627-10.711
+	c5.859,0,10.627,4.788,10.627,10.711C96.125,33.864,91.358,38.652,85.499,38.652z"/>
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="235.132" y1="147.7734" x2="-109.466" y2="147.7734">
+	<stop  offset="0" style="stop-color:#FFC836"/>
+	<stop  offset="1" style="stop-color:#FFE873"/>
+</linearGradient>
+<path class="st3" d="M230.784,88.571c-4.074-16.255-11.845-28.519-28.352-28.519H181.18v24.949c0,19.342-16.57,35.66-35.45,35.66
+	H89.048c-15.52,0-28.351,13.147-28.351,28.54v53.49c0,15.226,13.357,24.151,28.351,28.519c17.956,5.229,35.198,6.174,56.682,0
+	c14.281-4.095,28.352-12.307,28.352-28.519v-21.4h-56.682v-7.14h56.682h28.352c16.486,0,22.618-11.425,28.352-28.519
+	C236.707,128.033,236.455,111.148,230.784,88.571z M149.279,195.551c5.88,0,10.627,4.788,10.627,10.69
+	c0,5.922-4.746,10.711-10.627,10.711c-5.859,0-10.627-4.788-10.627-10.711C138.652,200.339,143.42,195.551,149.279,195.551z"/>
+</svg>

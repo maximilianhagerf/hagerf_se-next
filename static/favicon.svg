@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-10 -10 113.9 95.9" style="enable-background:new 0 0 93.9 75.9;" xml:space="preserve">
+	<!-- <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 93.9 75.9" style="enable-background:new 0 0 93.9 75.9;" xml:space="preserve"> -->
+	<style type="text/css">
+		.st0{
+		fill:none;
+		stroke:#FFFFFF;
+		stroke-width:8;
+		stroke-linecap:
+		round;
+		stroke-miterlimit:10;
+		}
+	</style>
+	<g>
+		<g initial="hidden" exit="exit">
+			<path class="st0" d="M0.8,59.7c0,0,0-41.6,0-43.5c1.4,0.7,30.8,15.4,30.8,15.4l30.8-15.4l0,43.5" />
+			<path class="st0" d="M93.2,44.3L62.4,59.7" />
+			<path class="st0" d="M93.2,0.8L62.4,16.2" />
+			<path class="st0" d="M31.5,75.2L62.3,59.8" />
+		</g>
+	</g>
+</svg>

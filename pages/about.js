@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Carousel } from "react-responsive-carousel";
 
 import Content from "../components/Content";
-import Welcome from "../components/Welcome";
+import Welcome from "../components/Welcome.js";
 import Fullstack from "../components/Fullstack";
 import Interaction from "../components/Interaction";
 

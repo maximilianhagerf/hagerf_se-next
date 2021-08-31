@@ -180,9 +180,9 @@
  */
 
 .WorkCV {
-  @apply relative mb-halfScreenH inline-block mx-auto;
-  @apply w-20 -left-3;
-  @apply sm:w-60 sm:p-4 sm:-left-9;
+  @apply relative  inline-block mx-auto;
+  @apply w-20 -left-3 mb-20;
+  @apply sm:w-60 sm:p-4 sm:-left-9 sm:mb-halfScreenH;
   @apply lg:w-80 lg:p-4 lg:-left-9;
 }
 

@@ -50,7 +50,7 @@ export default function About({ canonical }) {
         <div className="flex justify-center">
           <Link href="../static/Maximilian_Hagerf.pdf">
             <a className={styles.WorkCV} target="_blank">
-              <Image src={pdf} alt="fds" />
+              <Image src={pdf} alt="fds" loading="eager" />
             </a>
           </Link>
         </div>

@@ -14,8 +14,44 @@ const variants = {
   visible: {
     opacity: 1,
     transition: {
-      delay: 1,
+      delay: 3.5,
       duration: 0.5,
+    },
+  },
+};
+
+const item = {
+  hidden: {
+    opacity: 0,
+    top: 300,
+  },
+  visible: {
+    opacity: 1,
+    top: 0,
+    transition: {
+      ease: "easeOut",
+      duration: 0.5,
+    },
+  },
+  exit: {
+    opacity: 0,
+    top: 300,
+    transition: {
+      duration: 0.2,
+    },
+  },
+};
+
+const container = {
+  visible: {
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 1.5,
+    },
+  },
+  exit: {
+    transition: {
+      staggerChildren: 0.2,
     },
   },
 };
@@ -33,19 +69,41 @@ export default function About({ canonical }) {
           initial="hidden"
           animate="visible"
           exit="hidden"
-          variants={variants}
+          variants={container}
           className={`${styles.Header} ${styles.NoMargin}`}
         >
+          <h1 className={`${styles.Title} ${styles.NoMargin}`}>
+            <motion.span variants={item} className={styles.Yellow}>
+              Work{" "}
+            </motion.span>
+            <motion.span variants={item} className={styles.Purple}>
+              Work{" "}
+            </motion.span>
+            <motion.span variants={item} className={styles.Yellow}>
+              Work{" "}
+            </motion.span>
+          </h1>
+          <h1 className={`${styles.Title} ${styles.NoMargin}`}>
+            <motion.span variants={item} className={styles.Purple}>
+              Work{" "}
+            </motion.span>
+            <motion.span variants={item} className={styles.Yellow}>
+              Work{" "}
+            </motion.span>
+            <motion.span variants={item} className={styles.Purple}>
+              Work{" "}
+            </motion.span>
+          </h1>
           <h1 className={`${styles.Title}`}>
-            <span className={styles.Yellow}>Work </span>
-            <span className={styles.Purple}>Work </span>
-            <span className={styles.Yellow}>Work </span>
-            <span className={styles.Purple}>Work </span>
-            <span className={styles.Yellow}>Work </span>
-            <span className={styles.Purple}>Work </span>
-            <span className={styles.Yellow}>Work </span>
-            <span className={styles.Purple}>Work </span>
-            <span className={styles.Yellow}>Work </span>
+            <motion.span variants={item} className={styles.Yellow}>
+              Work{" "}
+            </motion.span>
+            <motion.span variants={item} className={styles.Purple}>
+              Work{" "}
+            </motion.span>
+            <motion.span variants={item} className={styles.Yellow}>
+              Work{" "}
+            </motion.span>
           </h1>
         </motion.header>
         <motion.div

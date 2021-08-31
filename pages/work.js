@@ -3,7 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Content from "../components/Content";
-import pdf from "../public/images/pdf.svg";
+
+import pdf from "../public/images/work/pdf.svg";
 import styles from "../styles/modules/Content.module.css";
 
 const variants = {

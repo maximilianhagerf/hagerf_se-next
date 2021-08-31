@@ -20,7 +20,7 @@ const SocialLink = ({ id, href, alt, icon }) => {
 
   const variants = {
     hidden: {
-      x: -170,
+      x: -270,
       transition: {
         delay: id * 0.1,
         duration: 0.5,

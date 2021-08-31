@@ -48,13 +48,18 @@ export default function About({ canonical }) {
             <span className={styles.Yellow}>Work </span>
           </h1>
         </motion.header>
-        <div className="flex justify-center">
+        <motion.div
+          variants={variants}
+          initial="hidden"
+          animate="visible"
+          className="flex justify-center"
+        >
           <Link href="../static/Maximilian_Hagerf.pdf">
             <a className={styles.WorkCV} target="_blank">
               <Image src={pdf} alt="fds" loading="eager" />
             </a>
           </Link>
-        </div>
+        </motion.div>
       </Content>
     </>
   );

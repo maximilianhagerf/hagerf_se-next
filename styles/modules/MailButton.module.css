@@ -1,5 +1,5 @@
 .MailButtonContainer {
-  @apply fixed z-10;
+  @apply fixed z-30;
   @apply bottom-0 right-0 w-full m-0;
   @apply sm:bottom-9 sm:right-9 sm:w-auto sm:left-auto;
   @apply lg:bottom-12 lg:right-12 lg:-ml-px;

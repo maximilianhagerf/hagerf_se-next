@@ -22,7 +22,7 @@
 .Welcome {
   @apply -rotate-12;
   @apply absolute text-center;
-  @apply w-80 bottom-20 right-44 hidden;
+  @apply w-80 bottom-20 right-44 -bottom-20 right-0;
   @apply sm:w-48 sm:bottom-20 sm:right-32 sm:block;
   @apply lg:w-80 lg:bottom-20 lg:right-44;
 }

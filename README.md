@@ -22,7 +22,7 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 ## Deployment
 
-This website is hosted on github and uses automated deployment using github actions, here is the [yaml file](./.github/workflows/deploy.yml)
+This website is hosted on github and uses automated deployment using github actions, here is the [yaml file](./.github/workflows/deploy.yml), credit to this [post by Federico](https://www.linkedin.com/pulse/deploy-nextjs-app-github-pages-federico-antu%C3%B1a/).
 
 ## Additional design/development tools and scripts
 

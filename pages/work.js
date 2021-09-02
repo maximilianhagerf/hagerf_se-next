@@ -51,7 +51,7 @@ const container = {
   },
   exit: {
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.1,
     },
   },
 };
@@ -68,7 +68,7 @@ export default function About({ canonical }) {
         <motion.header
           initial="hidden"
           animate="visible"
-          exit="hidden"
+          exit="exit"
           variants={container}
           className={`${styles.Header} ${styles.NoMargin}`}
         >

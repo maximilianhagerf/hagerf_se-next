@@ -52,7 +52,8 @@ const container = {
   },
   exit: {
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.1,
+      delayChildren: 0.5,
     },
   },
 };
@@ -85,18 +86,30 @@ export default function About({ canonical }) {
           className={styles.Header}
         >
           <h1 className={`${styles.Title} ${styles.NoMargin}`}>
-            <motion.span variants={item} className={styles.Yellow}>
+            <motion.span
+              variants={item}
+              className={`${styles.Yellow} ${styles.InlineBlock}`}
+            >
               Developer
               <Fullstack />
             </motion.span>
-            <motion.span variants={item}> & </motion.span>
+            <motion.span variants={item} className={styles.InlineBlock}>
+              {" "}
+              &{" "}
+            </motion.span>
           </h1>
           <h1 className={`${styles.Title} ${styles.NoMargin}`}>
-            <motion.span variants={item} className={styles.Yellow}>
+            <motion.span
+              variants={item}
+              className={`${styles.Yellow} ${styles.InlineBlock}`}
+            >
               Designer
               <Interaction />
             </motion.span>
-            <motion.span variants={item}> with over a </motion.span>
+            <motion.span variants={item} className={styles.InlineBlock}>
+              {" "}
+              with over a{" "}
+            </motion.span>
           </h1>
           <h1 className={`${styles.Title} ${styles.NoMargin}`}>
             <motion.span variants={item} className={styles.Purple}>

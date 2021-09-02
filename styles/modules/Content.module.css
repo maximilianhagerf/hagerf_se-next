@@ -8,8 +8,16 @@
   @apply sm:px-32 sm:text-7xl sm:mb-halfScreenH;
   @apply lg:px-44 lg:text-8xl;
   span {
-    @apply relative;
+    @apply relative inline;
   }
+}
+
+.InlineBlock {
+  @apply inline-block !important;
+
+  @apply pr-2;
+  @apply sm:pr-4;
+  @apply lg:pr-5;
 }
 
 .Yellow {

@@ -1,10 +1,3 @@
-.Svg {
-  @apply mx-auto;
-  max-width: 10rem;
-  @apply sm:max-w-sm;
-  @apply lg:max-w-lg;
-}
-
 .Line {
   fill: none;
   stroke: #ffffff;
@@ -23,8 +16,37 @@
   @apply -rotate-12;
   @apply absolute text-center;
   @apply w-80 -bottom-20 right-0;
-  @apply sm:w-48 sm:bottom-20 sm:right-32 sm:block;
-  @apply lg:w-80 lg:bottom-20 lg:right-44;
+  .Svg {
+    @apply mx-auto;
+    max-width: 10rem;
+  }
+  @media (min-width: 445px) {
+    @apply -bottom-20 right-6 block w-56;
+    .Svg {
+      max-width: 14rem;
+    }
+  }
+  @media (min-width: 640px) {
+    @apply right-32;
+    .Svg {
+      max-width: 14rem;
+    }
+  }
+  @media (min-width: 940px) {
+    @apply w-64;
+    .Svg {
+      max-width: 16rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    @apply w-80 right-44;
+    .Svg {
+      max-width: 20rem;
+    }
+  }
+  @media (min-width: 1265px) {
+    @apply bottom-20;
+  }
 }
 
 .Fullstack {

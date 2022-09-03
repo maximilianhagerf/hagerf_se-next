@@ -14,44 +14,8 @@ const variants = {
   visible: {
     opacity: 1,
     transition: {
-      delay: 3.5,
+      delay: 1,
       duration: 0.5,
-    },
-  },
-};
-
-const item = {
-  hidden: {
-    opacity: 0,
-    top: 300,
-  },
-  visible: {
-    opacity: 1,
-    top: 0,
-    transition: {
-      ease: "easeOut",
-      duration: 0.5,
-    },
-  },
-  exit: {
-    opacity: 0,
-    top: 300,
-    transition: {
-      duration: 0.2,
-    },
-  },
-};
-
-const container = {
-  visible: {
-    transition: {
-      staggerChildren: 0.2,
-      delayChildren: 1.5,
-    },
-  },
-  exit: {
-    transition: {
-      staggerChildren: 0.1,
     },
   },
 };
@@ -65,52 +29,12 @@ export default function About({ canonical }) {
       </Head>
 
       <Content>
-        <motion.header
-          initial="hidden"
-          animate="visible"
-          exit="exit"
-          variants={container}
-          className={`${styles.Header} ${styles.NoMargin}`}
-        >
-          <h1 className={`${styles.Title} ${styles.NoMargin}`}>
-            <motion.span variants={item} className={styles.Yellow}>
-              Work{" "}
-            </motion.span>
-            <motion.span variants={item} className={styles.Purple}>
-              Work{" "}
-            </motion.span>
-            <motion.span variants={item} className={styles.Yellow}>
-              Work{" "}
-            </motion.span>
-          </h1>
-          <h1 className={`${styles.Title} ${styles.NoMargin}`}>
-            <motion.span variants={item} className={styles.Purple}>
-              Work{" "}
-            </motion.span>
-            <motion.span variants={item} className={styles.Yellow}>
-              Work{" "}
-            </motion.span>
-            <motion.span variants={item} className={styles.Purple}>
-              Work{" "}
-            </motion.span>
-          </h1>
-          <h1 className={`${styles.Title}`}>
-            <motion.span variants={item} className={styles.Yellow}>
-              Work{" "}
-            </motion.span>
-            <motion.span variants={item} className={styles.Purple}>
-              Work{" "}
-            </motion.span>
-            <motion.span variants={item} className={styles.Yellow}>
-              Work{" "}
-            </motion.span>
-          </h1>
-        </motion.header>
         <motion.div
           variants={variants}
           initial="hidden"
           animate="visible"
-          className="flex justify-center"
+          exit="hidden"
+          className="flex justify-center h-screen items-center"
         >
           <Link href="../static/Maximilian_Hagerf.pdf">
             <a className={styles.WorkCV} target="_blank">

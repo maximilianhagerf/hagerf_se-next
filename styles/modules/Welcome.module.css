@@ -18,7 +18,7 @@
   @apply w-80 -bottom-20 right-0;
   .Svg {
     @apply mx-auto;
-    max-width: 10rem;
+    max-width: 14rem;
   }
   @media (min-width: 445px) {
     @apply -bottom-20 right-6 block w-56;
@@ -53,7 +53,7 @@
   @apply absolute;
   top: -7px;
   left: -5px;
-  width: 150px;
+  width: 220px;
   @screen sm {
     width: 250px;
     top: -5px;

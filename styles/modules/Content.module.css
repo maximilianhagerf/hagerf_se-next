@@ -93,7 +93,7 @@
 
 .HomeTextAnimate {
   @apply relative overflow-hidden w-full;
-  @apply text-5xl h-14;
+  @apply text-6xl h-18 leading-[4.5rem];
   @apply sm:text-8xl sm:h-32;
   @apply lg:text-9xl lg:h-36;
 }
@@ -118,7 +118,7 @@
 
   &:hover {
     span {
-      @apply sm:ml-20;
+      @apply sm:pl-20;
     }
     .HomeTextHoverHidden {
       @apply opacity-100;

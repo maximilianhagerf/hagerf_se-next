@@ -4,7 +4,7 @@
 
 .Title {
   @apply font-bold px-44 overflow-hidden;
-  @apply px-4 text-4xl mb-20;
+  @apply px-4 text-6xl mb-20 leading-tight;
   @apply sm:px-32 sm:text-7xl sm:mb-halfScreenH;
   @apply lg:px-44 lg:text-8xl;
   span {
@@ -170,7 +170,7 @@
   @apply sm:grid-cols-1 sm:gap-1;
 
   > div {
-    @apply mb-20;
+    @apply sm:mb-20;
   }
 }
 .AboutIconList {
@@ -189,8 +189,8 @@
 
 .WorkCV {
   @apply relative  inline-block mx-auto;
-  @apply w-20 -left-3 mb-20;
-  @apply sm:w-60 sm:p-4 sm:-left-9 sm:mb-halfScreenH;
+  @apply w-32 -left-5 mb-20;
+  @apply sm:w-60 sm:p-4 sm:-left-9;
   @apply lg:w-80 lg:p-4 lg:-left-9;
 }
 

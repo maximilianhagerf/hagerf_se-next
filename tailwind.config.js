@@ -109,7 +109,7 @@ module.exports = {
         80: "20rem",
         96: "24rem",
         screenH: "100vh",
-        halfScreenH: "50vh",
+        halfScreenH: "40vh",
       },
       strokeWidth: {
         0: "0",

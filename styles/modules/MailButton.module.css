@@ -65,8 +65,8 @@
 .IconContainer {
   @apply justify-center flex;
   @apply transition-all duration-700 ease-in-out;
-  @apply bg-yellow;
-  @apply sm:bg-ghost-90;
+  @apply bg-yellow relative -left-px;
+  @apply sm:bg-ghost-90 left-0;
   .Svg {
     path,
     line {
@@ -89,7 +89,7 @@
   @apply absolute top-0 left-0 bottom-0 right-0 box-border p-0 border-none m-auto block w-0 h-0 min-w-full max-w-full min-h-full max-h-full;
   path,
   line {
-    @apply transition-all duration-700 ease-in-out;
+    @apply transition-all duration-700 ease-in-out stroke-[3px] sm:stroke-2;
   }
 }
 

@@ -199,7 +199,8 @@ export default function About({ canonical }) {
         </h1>
         <p className={styles.Paragraph}>
           Maximilian is an experienced <strong>designer and developer</strong> -
-          a versatile and customer-oriented engineer.
+          a versatile and customer-oriented engineer currently working at{" "}
+          <strong>Mektig Technology Group AB</strong>.
         </p>
         <p className={styles.Paragraph}>
           Maximilian has worked with

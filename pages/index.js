@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-import background from "../public/images/backtest.png";
+import background from "../public/images/me-min.png";
 import Content from "../components/Content";
 import styles from "../styles/modules/Content.module.css";
 

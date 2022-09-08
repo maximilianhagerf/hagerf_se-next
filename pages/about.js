@@ -58,6 +58,17 @@ const container = {
   },
 };
 
+function getAge(dateString) {
+  const today = new Date();
+  const birthDate = new Date(dateString);
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const m = today.getMonth() - birthDate.getMonth();
+  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) age--;
+  return age;
+}
+const ViAge = getAge("2018/07/18");
+const AuAge = getAge("2019/10/08");
+
 function importAll(r) {
   let cache = {};
   r.keys().forEach((item) => (cache[item.replace("./", "")] = r(item)));
@@ -228,9 +239,9 @@ export default function About({ canonical }) {
         <p className={`${styles.Paragraph} ${styles.LastMargin}`}>
           Has since the summer of 2016 lived in Chile and
           <strong> Bolivia</strong> with his
-          <strong> wife and two daughters</strong>, 3 and 2 years. They met in
-          Sweden in 2012 when she received her doctorate in economics. The
-          family will move to Sweden soon.
+          <strong> wife and two daughters</strong>, {ViAge} and {AuAge} years
+          old. They met in Sweden in 2012 when she received her doctorate in
+          economics. The family will move to Sweden soon.
         </p>
       </Content>
     </>

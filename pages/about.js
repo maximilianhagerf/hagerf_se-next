@@ -192,15 +192,29 @@ export default function About({ canonical }) {
           things
         </h1>
         <ul className={styles.AboutIconList}>
-          {/* {images.map(({ image }) => ({ image }))} */}
           {Object.entries(cache).map((module) => {
             const image = module[1].default;
-            // const src = image.src.replace("/_next/static/image/public/", "");
             const name = module[0].replace("./", "");
+            const reg = /(^[\d\s-]+)?([a-zA-Z-_ \.]+)(\.[^\/.]+$)/gm;
+            let newName = name.replace(reg, "$2");
+            newName = newName.replace(/_/g, " ");
             return (
-              <li key={name}>
-                <Image src={image} alt={name} loading="eager" />
-                {/* <p>{name}</p> */}
+              <li
+                key={name}
+                className="relative inline-block leading-none group cursor-default"
+              >
+                <Image
+                  src={image}
+                  alt={name}
+                  loading="eager"
+                  className=" transition-opacity duration-500 group-hover:opacity-50"
+                />
+                <p className="invisible absolute group-hover:top-0 top-[-9999px] h-full whitespace-nowrap text-center z-30 right-[50%] grid place-items-center ">
+                  <span className="text-xs sm:text-base transition-opacity duration-500 visible opacity-0 bg-yellow text-black shadow-lg shadow-black px-4 py-2 rounded-md relative group-hover:opacity-100 mr-[-100%]">
+                    {newName}
+                  </span>
+                </p>
+                {}
               </li>
             );
           })}

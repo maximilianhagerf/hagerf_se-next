@@ -174,7 +174,7 @@
   }
 }
 .AboutIconList {
-  @apply grid justify-items-center items-center;
+  @apply grid justify-items-center items-center place-items-center;
   @apply grid-cols-4 gap-4 px-4 mb-halfScreenH;
   @apply sm:px-32 sm:gap-8 sm:grid-cols-5;
   @apply lg:px-44 lg:gap-8 lg:grid-cols-8;

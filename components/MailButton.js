@@ -79,7 +79,7 @@ const MailButton = () => {
   const isBottom = currentPrecent > 99 ? styles.isBottom : "";
 
   const onClick = () => {
-    copyTextToClipboard("maximilian.hagerf@gmail.com")
+    copyTextToClipboard("maximilian.hagerf@mektig.se")
       .then(() => {
         setIsCopied(true);
         setTimeout(() => {
@@ -109,7 +109,7 @@ const MailButton = () => {
           Copied!
         </motion.span>
         <span className={styles.Text}>
-          maximilian.hagerf@gmail.com
+          maximilian.hagerf@mektig.se
           <i className={styles.TextInside}>CLICK TO COPY</i>
         </span>
         <span className={styles.IconContainer}>

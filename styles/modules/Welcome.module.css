@@ -4,10 +4,16 @@
   stroke-linecap: round;
   stroke-miterlimit: 10;
   stroke-width: 2;
-  @screen sm {
+}
+
+@media screen(sm) {
+  .Line {
     stroke-width: 2;
   }
-  @screen lg {
+}
+
+@media screen(lg) {
+  .Line {
     stroke-width: 1.5;
   }
 }
@@ -20,31 +26,42 @@
     @apply mx-auto;
     max-width: 14rem;
   }
-  @media (min-width: 445px) {
+}
+
+@media (min-width: 445px) {
+  .Welcome {
     @apply -bottom-20 right-6 block w-56;
     .Svg {
       max-width: 14rem;
     }
   }
-  @media (min-width: 640px) {
+}
+@media (min-width: 640px) {
+  .Welcome {
     @apply right-32;
     .Svg {
       max-width: 14rem;
     }
   }
-  @media (min-width: 940px) {
+}
+@media (min-width: 940px) {
+  .Welcome {
     @apply w-64;
     .Svg {
       max-width: 16rem;
     }
   }
-  @media (min-width: 1024px) {
+}
+@media (min-width: 1024px) {
+  .Welcome {
     @apply w-80 right-44;
     .Svg {
       max-width: 20rem;
     }
   }
-  @media (min-width: 1265px) {
+}
+@media (min-width: 1265px) {
+  .Welcome {
     @apply bottom-20;
   }
 }
@@ -54,12 +71,18 @@
   top: -7px;
   left: -5px;
   width: 220px;
-  @screen sm {
+}
+
+@media screen(sm) {
+  .Fullstack {
     width: 250px;
     top: -5px;
     left: -5px;
   }
-  @screen lg {
+}
+
+@media screen(lg) {
+  .Fullstack {
     width: 300px;
   }
 }
@@ -70,7 +93,10 @@
   stroke-linecap: round;
   stroke-miterlimit: 10;
   stroke-width: 2;
-  @screen sm {
+}
+
+@media screen(sm) {
+  .FullstackLine {
     stroke-width: 1;
   }
 }

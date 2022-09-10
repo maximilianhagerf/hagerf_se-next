@@ -1,11 +1,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/dist/client/router";
-import {
-  motion,
-  useAnimation,
-  useViewportScroll,
-  useTransform,
-} from "framer-motion";
+import { motion, useAnimation, useTransform, useScroll } from "framer-motion";
 import styles from "../styles/modules/MailButton.module.css";
 
 const confirmVariants = {
@@ -49,7 +44,7 @@ const MailButton = () => {
   const [isCopied, setIsCopied] = useState(false);
 
   const [currentPrecent, setCurrentPercent] = useState(null);
-  const { scrollYProgress } = useViewportScroll();
+  const { scrollYProgress } = useScroll();
   const yRange = useTransform(scrollYProgress, [0, 1], [0, 100]);
 
   const mainControls = useAnimation();

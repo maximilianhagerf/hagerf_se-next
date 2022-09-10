@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { AnimateSharedLayout, motion, useAnimation } from "framer-motion";
+import { LayoutGroup, motion, useAnimation } from "framer-motion";
 import { useRouter } from "next/dist/client/router";
 import { isActiveLink } from "../lib/utils";
 import Link, { LinkProps } from "next/link";
@@ -151,7 +151,7 @@ const Navigation = () => {
           isHome={isHome}
           showMenu={showMenu}
         />
-        <AnimateSharedLayout>
+        <LayoutGroup>
           <nav
             className={`${styles.Navigation} ${completedClass}`}
             onClick={() => toggleMenu()}
@@ -166,13 +166,13 @@ const Navigation = () => {
               />
             ))}
           </nav>
-        </AnimateSharedLayout>
+        </LayoutGroup>
       </>
     );
   } else {
     return (
       <>
-        <AnimateSharedLayout>
+        <LayoutGroup>
           <nav
             className={`${styles.Navigation} ${completedClass}`}
             onClick={() => toggleMenu()}
@@ -187,7 +187,7 @@ const Navigation = () => {
               />
             ))}
           </nav>
-        </AnimateSharedLayout>
+        </LayoutGroup>
         <ProgressContainer />
       </>
     );

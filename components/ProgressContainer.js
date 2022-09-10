@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/dist/client/router";
 import {
   motion,
-  useViewportScroll,
+  useScroll,
   useSpring,
   useTransform,
   useAnimation,
@@ -30,7 +30,7 @@ const ProgressContainer = () => {
   const controls = useAnimation();
   const router = useRouter();
   const [currentPrecent, setCurrentPercent] = useState(null);
-  const { scrollYProgress } = useViewportScroll();
+  const { scrollYProgress } = useScroll();
   const yRange = useTransform(scrollYProgress, [0, 1], [0, 100]);
   const pathLength = useSpring(scrollYProgress, {
     stiffness: 600,
@@ -103,7 +103,7 @@ const ProgressContainer = () => {
             x: "15px",
             y: currentPrecent >= 99 ? "18px" : "50px",
           }}
-          stroke-linecap="round"
+          strokeLinecap="round"
           className={styles.Arrow}
           d=" M 1,9 L 9,1 L 18,9"
         />

@@ -3,8 +3,9 @@ module.exports = {
   assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH,
   reactStrictMode: true,
   trailingSlash: true,
-  images: {
-    loader: "imgix",
-    path: "/",
-  },
+  swcMinify: true,
+  // images: {
+  //   loader: "imgix",
+  //   path: "/",
+  // },
 };

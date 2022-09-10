@@ -55,17 +55,11 @@
 .ImageOverride {
   width: 100%;
   line-height: 0;
+  position: relative;
 
   > div {
     position: unset !important;
     display: inline-block !important;
-  }
-
-  img {
-    object-fit: contain;
-    width: 100% !important;
-    position: relative !important;
-    height: unset !important;
   }
 }
 

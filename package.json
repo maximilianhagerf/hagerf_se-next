@@ -1,6 +1,6 @@
 {
   "name": "hagerf",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -12,9 +12,9 @@
     "static": "next build && next export && serve -s out -p 9000"
   },
   "dependencies": {
-    "next": "11.0.1",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
+    "next": "12",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-intersection-observer": "^8.32.0"
   },
   "devDependencies": {
@@ -22,12 +22,12 @@
     "eslint": "7.32.0",
     "eslint-config-next": "11.0.1",
     "eslint-config-prettier": "^8.3.0",
-    "framer-motion": "^4.1.17",
+    "framer-motion": "^7.3.2",
     "postcss": "^8.4.16",
     "postcss-flexbugs-fixes": "5.0.2",
     "postcss-import": "14.0.2",
     "postcss-preset-env": "6.7.0",
-    "react-responsive-carousel": "3.2.11",
+    "react-responsive-carousel": "^3.2.23",
     "tailwindcss": "^3.1.8"
   },
   "browserslist": [

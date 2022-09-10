@@ -141,31 +141,47 @@ export default function About({ canonical }) {
           preventMovementUntilSwipeScrollTolerance={true}
           infiniteLoop={true}
           emulateTouch={true}
-          // autoPlay={true}
-          // interval={"30000"}
-          // showArrows={false}
           showStatus={false}
           showIndicators={false}
           showThumbs={false}
           useKeyboardArrows={true}
-          // renderArrowPrev={false}
-          // renderArrowNext={false}
           renderIndicator={false}
           renderThumbs={false}
           interval="500"
           transitionTime="500"
+          dynamicHeight={true}
         >
-          <div className={styles.ImageOverride}>
-            <Image src={slide1} alt="fds" layout="fill" loading="eager" />
+          <div className={`${styles.ImageOverride}`}>
+            <Image
+              src={slide1}
+              alt="slide1"
+              layout="responsive"
+              loading="eager"
+            />
           </div>
           <div className={styles.ImageOverride}>
-            <Image src={slide2} alt="fds" layout="fill" loading="eager" />
+            <Image
+              src={slide2}
+              alt="slide2"
+              layout="responsive"
+              loading="eager"
+            />
           </div>
           <div className={styles.ImageOverride}>
-            <Image src={slide3} alt="fds" layout="fill" loading="eager" />
+            <Image
+              src={slide3}
+              alt="slide3"
+              layout="responsive"
+              loading="eager"
+            />
           </div>
           <div className={styles.ImageOverride}>
-            <Image src={slide4} alt="fds" layout="fill" loading="eager" />
+            <Image
+              src={slide4}
+              alt="slide4"
+              layout="responsive"
+              loading="eager"
+            />
           </div>
         </Carousel>
         <h1 className={`${styles.Title} ${styles.SmallMargin}`}>

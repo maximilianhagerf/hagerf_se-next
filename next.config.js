@@ -5,11 +5,7 @@ module.exports = {
   trailingSlash: true,
   swcMinify: true,
   images: {
-    loader: "imgix",
-    path: "/",
+    loader: "akamai",
+    path: "",
   },
-  // images: {
-  //   loader: "akamai",
-  //   path: "",
-  // },
 };

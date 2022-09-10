@@ -10,4 +10,8 @@ module.exports = {
   //   loader: "imgix",
   //   path: "/",
   // },
+  images: {
+    loader: "akamai",
+    path: "/",
+  },
 };

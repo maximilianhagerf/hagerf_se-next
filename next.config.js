@@ -6,6 +6,6 @@ module.exports = {
   swcMinify: true,
   images: {
     loader: "akamai",
-    path: "https://github.com/maximilianhagerf/maximilianhagerf.github.io",
+    path: "hagerf.se",
   },
 };

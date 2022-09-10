@@ -10,6 +10,7 @@ jobs:
 
     env:
       NEXT_PUBLIC_BASE_PATH: ""
+      NODE_ENV: 'production'
 
     strategy:
       matrix:

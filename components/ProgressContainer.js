@@ -41,6 +41,9 @@ const ProgressContainer = () => {
   useEffect(() => {
     if (router.pathname === "/") {
       controls.start("hidden");
+      setCurrentPercent(0);
+    } else if (router.pathname === "/work") {
+      setCurrentPercent(0);
     } else {
       controls.start("visible");
     }

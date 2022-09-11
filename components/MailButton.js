@@ -43,7 +43,7 @@ const MailButton = () => {
   const controls = useAnimation();
   const [isCopied, setIsCopied] = useState(false);
 
-  const [currentPrecent, setCurrentPercent] = useState(null);
+  const [currentPercent, setCurrentPercent] = useState(null);
   const { scrollYProgress } = useScroll();
   const yRange = useTransform(scrollYProgress, [0, 1], [0, 100]);
 
@@ -66,12 +66,16 @@ const MailButton = () => {
   useEffect(
     () =>
       yRange.onChange((v) => {
-        setCurrentPercent(Math.trunc(yRange.current));
+        if (router.pathname === "/") {
+          setCurrentPercent(0);
+        } else {
+          setCurrentPercent(Math.trunc(v));
+        }
       }),
-    [yRange]
+    [yRange, router]
   );
 
-  const isBottom = currentPrecent > 99 ? styles.isBottom : "";
+  const isBottom = currentPercent > 98 ? styles.isBottom : "";
 
   const onClick = () => {
     copyTextToClipboard("maximilian.hagerf@mektig.se")

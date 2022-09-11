@@ -14,7 +14,7 @@ const breakpoint = getBreakpointValue("sm");
 
 const SocialLinks = [
   {
-    id: 12,
+    id: 13,
     key: "github",
     href: "https://github.com/maximilianhagerf",
     alt: "github",

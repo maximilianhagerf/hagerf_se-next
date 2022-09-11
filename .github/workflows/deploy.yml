@@ -9,8 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      NEXT_PUBLIC_BASE_PATH: ""
-      NODE_ENV: "production"
+      NEXT_PUBLIC_BASE_PATH: ''
 
     strategy:
       matrix:

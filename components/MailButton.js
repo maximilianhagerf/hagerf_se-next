@@ -66,7 +66,7 @@ const MailButton = () => {
   useEffect(
     () =>
       yRange.onChange((v) => {
-        if (router.pathname === "/") {
+        if (router.pathname === "/" || router.pathname === "/work") {
           setCurrentPercent(0);
         } else {
           setCurrentPercent(Math.trunc(v));

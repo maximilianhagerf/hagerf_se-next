@@ -44,6 +44,7 @@ const ProgressContainer = () => {
       setCurrentPercent(0);
     } else if (router.pathname === "/work") {
       setCurrentPercent(0);
+      controls.start("visible");
     } else {
       controls.start("visible");
     }

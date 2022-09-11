@@ -32,20 +32,15 @@ const ProgressContainer = () => {
   const [currentPercent, setCurrentPercent] = useState(0);
   const { scrollYProgress } = useScroll();
   const yRange = useTransform(scrollYProgress, [0, 1], [0, 100]);
-  const pathLength = useSpring(
-    router.pathname === "/" || router.pathname === "/work"
-      ? 0
-      : scrollYProgress,
-    {
-      stiffness: 600,
-      damping: 100,
-    }
-  );
+  const [pathL, setPathL] = useState(0);
+  const pathLength = useSpring(scrollYProgress, {
+    stiffness: 600,
+    damping: 100,
+  });
 
   useEffect(() => {
     if (router.pathname === "/") {
       controls.start("hidden");
-      setCurrentPercent(0);
     } else {
       controls.start("visible");
     }
@@ -53,16 +48,10 @@ const ProgressContainer = () => {
 
   useEffect(() => {
     yRange.onChange((v) => {
-      console.log("Page scroll: ", v);
+      setPathL(Math.trunc(v));
       setCurrentPercent(Math.trunc(v));
     });
   }, [yRange]);
-
-  useEffect(() => {
-    setCurrentPercent(Math.trunc(0));
-    window.scrollTo(0, 0);
-    console.log("router", router);
-  }, [router]);
 
   const onClick = () => {
     if (currentPercent >= 98) {
@@ -72,54 +61,57 @@ const ProgressContainer = () => {
   };
 
   return (
-    <motion.div
-      className={styles.ProgressContainer}
-      onClick={onClick}
-      initial="hidden"
-      animate={controls}
-      // animate="visible"
-      exit="hidden"
-      variants={containerVariants}
-    >
-      <motion.svg
-        className="progress-icon"
-        viewBox="0 0 60 60"
-        animate={{
-          transitionEnd: {
-            style: currentPercent >= 98 ? "cursor:pointer" : "cursor:default",
-          },
-        }}
+    <>
+      <p className="hidden">{pathL}</p>
+      <motion.div
+        className={styles.ProgressContainer}
+        onClick={onClick}
+        initial="hidden"
+        animate={controls}
+        // animate="visible"
+        exit="hidden"
+        variants={containerVariants}
       >
-        <motion.path
+        <motion.svg
+          className="progress-icon"
+          viewBox="0 0 60 60"
           animate={{
-            fill: currentPercent >= 98 ? "rgba(255, 255, 255, 1)" : "#404040",
             transitionEnd: {
-              strokeLinecap: currentPercent < 3 ? "" : "round",
+              style: currentPercent >= 98 ? "cursor:pointer" : "cursor:default",
             },
           }}
-          transition={{ duration: 0.5 }}
-          strokeWidth="2"
-          strokeDasharray="0 1"
-          d="M 0, 20 a 20, 20 0 1,0 40,0 a 20, 20 0 1,0 -40,0"
-          className={styles.ProgressBar}
-          style={{
-            pathLength,
-          }}
-        />
+        >
+          <motion.path
+            animate={{
+              fill: currentPercent >= 98 ? "rgba(255, 255, 255, 1)" : "#404040",
+              transitionEnd: {
+                strokeLinecap: currentPercent < 3 ? "" : "round",
+              },
+            }}
+            transition={{ duration: 0.5 }}
+            strokeWidth="2"
+            strokeDasharray="0 1"
+            d="M 0, 20 a 20, 20 0 1,0 40,0 a 20, 20 0 1,0 -40,0"
+            className={styles.ProgressBar}
+            style={{
+              pathLength,
+            }}
+          />
 
-        <motion.path
-          mask="url(#mask1)"
-          animate={{
-            stroke: currentPercent >= 98 ? "rgba(0,0,0,1)" : "rgba(0,0,0,0)",
-            x: "15px",
-            y: currentPercent >= 98 ? "18px" : "50px",
-          }}
-          strokeLinecap="round"
-          className={styles.Arrow}
-          d=" M 1,9 L 9,1 L 18,9"
-        />
-      </motion.svg>
-    </motion.div>
+          <motion.path
+            mask="url(#mask1)"
+            animate={{
+              stroke: currentPercent >= 98 ? "rgba(0,0,0,1)" : "rgba(0,0,0,0)",
+              x: "15px",
+              y: currentPercent >= 98 ? "18px" : "50px",
+            }}
+            strokeLinecap="round"
+            className={styles.Arrow}
+            d=" M 1,9 L 9,1 L 18,9"
+          />
+        </motion.svg>
+      </motion.div>
+    </>
   );
 };
 

@@ -9,21 +9,21 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      NEXT_PUBLIC_BASE_PATH: '/'
+      NEXT_PUBLIC_BASE_PATH: ''
 
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: [16.x]
 
     steps:
       - name: Get files
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install packages
-        run: yarn install --frozen-lockfile
+        run: yarn install
       - name: Build project
         run: yarn run build
       - name: Export static files

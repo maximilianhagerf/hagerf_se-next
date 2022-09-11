@@ -1,5 +1,5 @@
 .ProgressContainer {
-  @apply fixed;
+  @apply fixed z-30;
   @apply right-2 top-6 w-10 h-10;
   @apply sm:right-9 sm:-mr-px sm:top-10 sm:w-13 sm:h-13;
   @apply lg:right-14 lg:top-15 lg:w-13 lg:h-13 sm:mr-0;

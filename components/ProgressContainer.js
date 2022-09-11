@@ -29,32 +29,43 @@ const containerVariants = {
 const ProgressContainer = () => {
   const controls = useAnimation();
   const router = useRouter();
-  const [currentPrecent, setCurrentPercent] = useState(null);
+  const [currentPercent, setCurrentPercent] = useState(0);
   const { scrollYProgress } = useScroll();
   const yRange = useTransform(scrollYProgress, [0, 1], [0, 100]);
-  const pathLength = useSpring(scrollYProgress, {
-    stiffness: 600,
-    damping: 100,
-  });
+  const pathLength = useSpring(
+    router.pathname === "/" || router.pathname === "/work"
+      ? 0
+      : scrollYProgress,
+    {
+      stiffness: 600,
+      damping: 100,
+    }
+  );
 
   useEffect(() => {
     if (router.pathname === "/") {
       controls.start("hidden");
+      setCurrentPercent(0);
     } else {
       controls.start("visible");
     }
   }, [controls, router]);
 
-  useEffect(
-    () =>
-      yRange.onChange((v) => {
-        setCurrentPercent(Math.trunc(yRange.current));
-      }),
-    [yRange]
-  );
+  useEffect(() => {
+    yRange.onChange((v) => {
+      console.log("Page scroll: ", v);
+      setCurrentPercent(Math.trunc(v));
+    });
+  }, [yRange]);
+
+  useEffect(() => {
+    setCurrentPercent(Math.trunc(0));
+    window.scrollTo(0, 0);
+    console.log("router", router);
+  }, [router]);
 
   const onClick = () => {
-    if (currentPrecent >= 99) {
+    if (currentPercent >= 98) {
       setCurrentPercent(0);
       window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     }
@@ -75,15 +86,15 @@ const ProgressContainer = () => {
         viewBox="0 0 60 60"
         animate={{
           transitionEnd: {
-            style: currentPrecent >= 99 ? "cursor:pointer" : "cursor:default",
+            style: currentPercent >= 98 ? "cursor:pointer" : "cursor:default",
           },
         }}
       >
         <motion.path
           animate={{
-            fill: currentPrecent >= 99 ? "rgba(255, 255, 255, 1)" : "#404040",
+            fill: currentPercent >= 98 ? "rgba(255, 255, 255, 1)" : "#404040",
             transitionEnd: {
-              strokeLinecap: currentPrecent < 3 ? "" : "round",
+              strokeLinecap: currentPercent < 3 ? "" : "round",
             },
           }}
           transition={{ duration: 0.5 }}
@@ -99,9 +110,9 @@ const ProgressContainer = () => {
         <motion.path
           mask="url(#mask1)"
           animate={{
-            stroke: currentPrecent >= 99 ? "rgba(0,0,0,1)" : "rgba(0,0,0,0)",
+            stroke: currentPercent >= 98 ? "rgba(0,0,0,1)" : "rgba(0,0,0,0)",
             x: "15px",
-            y: currentPrecent >= 99 ? "18px" : "50px",
+            y: currentPercent >= 98 ? "18px" : "50px",
           }}
           strokeLinecap="round"
           className={styles.Arrow}

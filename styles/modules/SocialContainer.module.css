@@ -1,6 +1,6 @@
 .SocialContainer {
   @apply flex;
-  @apply mb-44 justify-center;
+  @apply pb-44 justify-center;
   @apply sm:mb-0 sm:w-32 sm:pb-0 sm:fixed sm:flex-col sm:items-center sm:justify-center sm:bottom-12;
   @apply lg:w-44 lg:flex-col;
 }

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+// import background from "../public/images/backtest.png";
 import background from "../public/images/me-min.png";
 import Content from "../components/Content";
 import styles from "../styles/modules/Content.module.css";
@@ -12,13 +13,15 @@ const backgroundVariants = {
   hidden: {
     opacity: 0,
     scale: 0.98,
+    y: 10,
     transition: {
       duration: 1,
     },
   },
   visible: {
-    opacity: 1,
+    opacity: 0.5,
     scale: 1,
+    y: 0,
     transition: {
       delay: 2,
       duration: 2,

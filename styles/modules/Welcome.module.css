@@ -22,6 +22,7 @@
   @apply -rotate-12;
   @apply absolute text-center;
   @apply w-80 -bottom-20 right-0;
+  @apply lg:top-[450px];
   .Svg {
     @apply mx-auto;
     max-width: 14rem;
@@ -54,7 +55,7 @@
 }
 @media (min-width: 1024px) {
   .Welcome {
-    @apply w-80 right-44;
+    @apply w-80 right-44 top-[900px];
     .Svg {
       max-width: 20rem;
     }
@@ -62,7 +63,7 @@
 }
 @media (min-width: 1265px) {
   .Welcome {
-    @apply bottom-20;
+    @apply bottom-20 top-[450px];
   }
 }
 
@@ -98,5 +99,17 @@
 @media screen(sm) {
   .FullstackLine {
     stroke-width: 1;
+  }
+}
+
+@screen 3xl {
+  .Welcome {
+    @apply w-[400px] left-[1200px] top-[680px];
+    .Svg {
+      max-width: 24rem;
+    }
+  }
+  .Fullstack {
+    @apply w-[400px];
   }
 }

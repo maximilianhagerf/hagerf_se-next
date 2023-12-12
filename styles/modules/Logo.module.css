@@ -22,3 +22,8 @@
     stroke-width: 10;
   }
 }
+@screen 3xl {
+  .Logo {
+    @apply w-20 left-18 top-18;
+  }
+}

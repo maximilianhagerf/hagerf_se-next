@@ -48,7 +48,7 @@
   @apply sm:pt-28 sm:mb-halfScreenH;
   @apply lg:pt-37 lg:max-w-[1300px] lg:h-screenH lg:mb-0;
   h1 {
-    @apply pt-[7px];
+    @apply pt-[7px] pb-[7px];
   }
   @screen 2xl {
     @apply max-w-[2000px] pt-44;
@@ -97,9 +97,9 @@
 
 .HomeTextAnimate {
   @apply relative overflow-hidden w-full;
-  @apply text-6xl h-18 leading-[4.5rem];
+  @apply text-6xl h-19 leading-[4.5rem];
   @apply sm:text-8xl sm:h-32;
-  @apply lg:text-9xl lg:h-36;
+  @apply lg:text-9xl lg:h-37;
 }
 .HomeTextAnimateWrap {
   @apply absolute;

@@ -50,12 +50,18 @@
   h1 {
     @apply pt-[7px];
   }
-  @screen 3xl {
+  @screen 2xl {
     @apply max-w-[2000px] pt-44;
     h1 {
-      @apply text-[10rem];
+      @apply text-[8rem];
     }
   }
+  /* @screen 3xl {
+    @apply max-w-[2000px] pt-44;
+    h1 {
+      @apply text-[8rem];
+    }
+  } */
 }
 
 .ImageOverride {
